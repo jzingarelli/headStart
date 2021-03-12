@@ -1,0 +1,104 @@
+<!-- <h2>Rectangle Creator</h2>
+<p>Count: <input id="count" value="5"></p>
+<button id="create">Create</button>
+<button id="cancel">Cancel</button> -->
+<div>
+  <label>Project Title</label>
+  <input type="text" id="projectName" value="Project Title">
+</div>
+<div>
+  <label>Team Name</label>
+  <input type="text" id="teamName" value="Team Name">
+</div>
+<div>
+  <label>Cover Background Color</label>
+  <input type="color" id="coverColor" name="Cover Color" value="#e66465">
+</div>
+<div>
+  <label>Slack Channels</label>
+  <input type="text" id="slackChannel" value="#some-channel">
+  <label>Add one - three chanels, separated by spaces</label>
+</div>
+
+<div>
+  <label>projectDescription</label>
+  <input type="text" id="projectDescription" value="shortprojectDescription">
+</div>
+
+<div>
+  <label>productPOC</label>
+  <input type="text" id="productPOC" value="productPOC">
+</div>
+
+<div>
+  <label>designPOC</label>
+  <input type="text" id="designPOC" value="designPOC">
+</div>
+
+<div>
+  <label>engPOC</label>
+  <input type="text" id="engPOC" value="engPOC">
+</div>
+
+
+<button id="createPage">Create Page</button>
+
+<script>
+
+
+//create a new page
+document.getElementById('createPage').onclick = () => {
+  projectName = document.getElementById("projectName").value
+  teamName = document.getElementById("teamName").value
+
+  projectDescription = document.getElementById("projectDescription").value
+  productPOC = document.getElementById("productPOC").value
+  designPOC = document.getElementById("designPOC").value
+  engPOC = document.getElementById("engPOC").value
+  
+
+  slackChannel = document.getElementById("slackChannel").value
+  hexColor = document.getElementById("coverColor").value
+
+  function hexToRGB(h) {
+    let r = 0, g = 0, b = 0;
+
+    // 3 digits
+    if (h.length == 4) {
+      r = "0x" + h[1] + h[1];
+      g = "0x" + h[2] + h[2];
+      b = "0x" + h[3] + h[3];
+
+    // 6 digits
+    } else if (h.length == 7) {
+      r = "0x" + h[1] + h[2];
+      g = "0x" + h[3] + h[4];
+      b = "0x" + h[5] + h[6];
+    }
+    
+
+    rgbArray = [ (+r/255), (+g/255), (+b/255)]
+    return rgbArray
+  }
+
+  rgbColorValues = hexToRGB(hexColor)
+
+
+  parent.postMessage({ pluginMessage: { 
+    type: 'createPage', 
+    projectName: projectName, 
+    projectDescription: projectDescription,
+    productPOC: productPOC,
+    designPOC: designPOC,
+    engPOC: engPOC,
+    teamName: teamName, 
+    slackChannel: slackChannel, 
+    color: rgbColorValues
+  }}, '*')
+}
+
+</script>
+
+<style>
+
+</style>
