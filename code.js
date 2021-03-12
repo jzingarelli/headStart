@@ -14,6 +14,7 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 // full browser environment (see documentation).
 // This shows the HTML page in "ui.html".
 figma.showUI(__html__);
+figma.ui.resize(440, 900);
 //load our fonts!
 function loadFonts() {
     return __awaiter(this, void 0, void 0, function* () {
@@ -745,7 +746,7 @@ var createLocalComponents = () => {
     createPage("LOCAL COMPONENTS");
 };
 figma.ui.onmessage = (event) => {
-    if (event.type === "createPage") {
+    if (event.type === "createTemplate") {
         createCover(event.projectName, event.teamName, event.color);
         createReadme(event.projectName, event.projectDescription, event.productPOC, event.designPOC, event.engPOC, event.slackChannel);
         createEngHandoff();

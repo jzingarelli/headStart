@@ -7,7 +7,7 @@
 
 // This shows the HTML page in "ui.html".
 figma.showUI(__html__);
-
+figma.ui.resize(440, 900);
 
 //load our fonts!
 async function loadFonts() {
@@ -815,7 +815,7 @@ var createLocalComponents = () => {
 }
 
 figma.ui.onmessage = (event) => {
-  if (event.type === "createPage") {
+  if (event.type === "createTemplate") {
     createCover(event.projectName, event.teamName, event.color);
     createReadme(event.projectName, event.projectDescription, event.productPOC, event.designPOC, event.engPOC, event.slackChannel);
     createEngHandoff();
