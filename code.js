@@ -756,4 +756,5 @@ figma.ui.onmessage = (event) => {
         createArchive();
         createLocalComponents();
     }
+    figma.closePlugin();
 };
