@@ -1,8 +1,49 @@
 <div id="uiBackground">
   <div class="previewBackground">
-    <div class="previewBox">
+    <div id="previewBox">
       <h1 class="projectTitle" id="mockTitle">Project Title</h1>
       <p class="teamName" id="mockTeamName">Team Name<p>
+    </div>
+  </div>
+  <div id="colors">
+    <div>
+      <form id="colorPicker" onchange="changeBGColor()">
+        <label class="container">
+          <input type="radio" name="color" value="#01A652">
+          <span class="radioButton" id="green"></span>
+        </label>
+
+        <label class="container">
+          <input type="radio" id="blue" name="color" value="#0C6FF9">
+          <span class="radioButton" id="blue"></span>
+        </label>
+
+        <label class="container">
+          <input type="radio"  name="color" value="#FF7E1D">
+          <span class="radioButton" id="orange"></span>
+        </label>
+
+        <label class="container">
+          <input type="radio"  name="color" value="#FEACD5">
+          <span class="radioButton" id="pink"></span>
+        </label>
+
+        <label class="container">
+          <input type="radio"  name="color" value="#A273C6">
+          <span class="radioButton" id="purple"></span>
+        </label>
+
+        <label class="container">
+          <input type="radio"  name="color" value="#EF3C3C">
+          <span class="radioButton" id="red"></span>
+        </label>
+
+        <label class="container">
+          <input type="radio"  name="color" value="#FFCE00">
+          <span class="radioButton" id="yellow"></span>
+        </label>
+      
+      </form>
     </div>
   </div>
   <div id="inputBox">
@@ -12,9 +53,7 @@
     <div>
       <input type="text" id="teamName" placeholder="Team Name" oninput="onTeamNameChange()">
     </div>
-    <div>
-      <input type="color" id="coverColor" placeholder="Cover Color" value="#e66465">
-    </div>
+
     <div>
       <input type="text" id="slackChannel" placeholder="#some-channel">
     </div>
@@ -42,6 +81,59 @@
 </div>
 
 <style>
+
+  #green {
+    background-color: #49CE7F;
+  }
+
+  #blue {
+    background-color: #0C6FF9;
+  }
+
+  #orange {
+    background-color: #FF7E1D;
+  }
+
+  #pink {
+    background-color: #FEACD5;
+  }
+
+  #purple {
+    background-color: #A273C6;
+  }
+
+  #red {
+    background-color: #EF3C3C;
+  }
+
+  #yellow {
+    background-color: #FFCE00;
+  }
+
+  
+  
+  .container {
+    margin: 16px;
+
+  }
+
+
+  .container input {
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+
+  }
+
+  .radioButton {
+    position: absolute;
+    height: 25px;
+    width: 25px;
+    background-color: rgba(1, 1, 1, .2);
+    border-radius: 4px;
+  }
+
   body {
     margin: 0;
   }
@@ -56,7 +148,7 @@
     padding-bottom: 30px;
   }
 
-  .previewBox {
+  #previewBox {
     width: 316px;
     height: 177px;
     background-color:#49CE7F;
@@ -150,6 +242,24 @@
     mockTeamNameText.innerHTML = currentTeamNameText;
   }
 
+  //set default
+  let currentColor = "01A652"
+
+  var changeBGColor = () => {
+    var colorForm = document.getElementById("colorPicker")
+    //find checked radio button
+    for (var i = 0, length = colorForm.length; i < length; i++) {
+      if (colorForm[i].checked) {
+        // do whatever you want with the checked radio
+        currentColor = colorForm[i].value;
+        console.log(currentColor)
+        document.getElementById("previewBox").style.backgroundColor = currentColor;
+        // only one radio can be logically checked, don't check the rest
+        break;
+      }
+}
+  }
+
   document.getElementById('createTemplate').onclick = () => {
     projectName = document.getElementById("projectName").value
     teamName = document.getElementById("teamName").value
@@ -161,7 +271,8 @@
     
 
     slackChannel = document.getElementById("slackChannel").value
-    hexColor = document.getElementById("coverColor").value
+    hexColor = currentColor
+    console.log(hexColor)
 
     function hexToRGB(h) {
       let r = 0, g = 0, b = 0;
