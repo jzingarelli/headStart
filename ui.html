@@ -276,16 +276,12 @@
   document.getElementById('createTemplate').onclick = () => {
     projectName = document.getElementById("projectName").value
     teamName = document.getElementById("teamName").value
-
     projectDescription = document.getElementById("projectDescription").value
     productPOC = document.getElementById("productPOC").value
     designPOC = document.getElementById("designPOC").value
     engPOC = document.getElementById("engPOC").value
-    
-
     slackChannel = document.getElementById("slackChannel").value
     hexColor = currentColor
-    console.log(hexColor)
 
     function hexToRGB(h) {
       let r = 0, g = 0, b = 0;

@@ -21,11 +21,11 @@ function loadFonts() {
         yield Promise.all([
             figma.loadFontAsync({
                 family: "Apercu Pro",
-                style: "Bold"
+                style: "Regular"
             }), figma.loadFontAsync({
                 family: "Apercu Pro",
-                style: "Regular"
-            })
+                style: "Bold"
+            }),
         ]);
     });
 }
@@ -59,6 +59,7 @@ let createCover = (projectName, teamName, color) => {
     projectNameText.x = 40;
     projectNameText.y = 40;
     loadFonts().then((res) => {
+        console.log("font loaded");
         projectNameText.fontName = {
             family: "Apercu Pro",
             style: "Bold"
@@ -756,5 +757,4 @@ figma.ui.onmessage = (event) => {
         createArchive();
         createLocalComponents();
     }
-    figma.closePlugin();
 };

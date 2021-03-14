@@ -14,11 +14,11 @@ async function loadFonts() {
 	await Promise.all([
 		figma.loadFontAsync({
 			family: "Apercu Pro",
-			style: "Bold"
+			style: "Regular"
 			}),figma.loadFontAsync({
 			family: "Apercu Pro",
-			style: "Regular"
-			})
+			style: "Bold"
+			}),
 	])
 }
 
@@ -57,18 +57,22 @@ let createCover = (projectName, teamName, color) => {
   projectNameText.x = 40
   projectNameText.y = 40
   loadFonts().then((res) => {
-      projectNameText.fontName = {
-        family: "Apercu Pro",
-        style: "Bold"
-      }
-      projectNameText.characters = projectName
-      projectNameText.fontSize = 56
-      projectNameText.letterSpacing = {"unit":"PERCENT","value":-5.5}
-      projectNameText.lineHeight = {"unit":"PERCENT","value":114.99999761581421}
-      projectNameText.fontName = {"family":"Apercu Pro","style":"Bold"}
+    console.log("font loaded")
+    projectNameText.fontName = {
+      family: "Apercu Pro",
+      style: "Bold"
+    }
+    projectNameText.characters = projectName
+    
+    projectNameText.fontSize = 56
+    projectNameText.letterSpacing = {"unit":"PERCENT","value":-5.5}
+    projectNameText.lineHeight = {"unit":"PERCENT","value":114.99999761581421}
+    projectNameText.fontName = {"family":"Apercu Pro","style":"Bold"}
 
   })
   coverFrame.appendChild(projectNameText)
+
+  
 
   // Create Team Name
   var teamNameText = figma.createText()
@@ -770,6 +774,7 @@ let createReadme = (projectName, projectDescription, productPOC, designPOC, engP
   rectangle_1_65.y = 958
   frame_1_39.appendChild(rectangle_1_65)
 
+  
 }
 
 //create function to easily make pages
@@ -824,6 +829,7 @@ figma.ui.onmessage = (event) => {
     createThink();
     createArchive();
     createLocalComponents();
+    
   }
-  figma.closePlugin();
+  
 }
