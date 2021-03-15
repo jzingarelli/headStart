@@ -73,7 +73,6 @@ let createCover = (projectName, teamName, color) => {
     projectNameText.x = 40;
     projectNameText.y = 40;
     loadFonts().then((res) => {
-        console.log("font loaded");
         projectNameText.fontName = {
             family: "Apercu Pro",
             style: "Bold"
@@ -762,7 +761,7 @@ var createLocalComponents = () => {
     createPage("LOCAL COMPONENTS");
 };
 figma.ui.onmessage = (event) => {
-    if (event.type === "createTemplate") {
+    if (event.type === "createProject") {
         createCover(event.projectName, event.teamName, event.color);
         createReadme(event.projectName, event.projectDescription, event.productPOC, event.designPOC, event.engPOC, event.slackChannel);
         createEngHandoff();
