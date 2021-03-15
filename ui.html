@@ -71,7 +71,7 @@
       <textarea rows="5" id="projectDescription" placeholder="Short Project Description"></textarea>
     </div>
 
-    <button id="createTemplate">Create Template</button>
+    <button id="createProject">Create Project</button>
   </div>
 </div>
 
@@ -273,7 +273,7 @@
 }
   }
 
-  document.getElementById('createTemplate').onclick = () => {
+  document.getElementById('createProject').onclick = () => {
     //assign project name value from input
     projectName = document.getElementById("projectName").value
     if (projectName === "") {
@@ -339,7 +339,7 @@
 
 
     parent.postMessage({ pluginMessage: { 
-      type: 'createTemplate', 
+      type: 'createProject', 
       projectName: projectName, 
       projectDescription: projectDescription,
       productPOC: productPOC,
