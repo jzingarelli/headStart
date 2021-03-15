@@ -27,6 +27,7 @@ function loadFonts() {
                 style: "Bold"
             }),
         ]);
+        figma.closePlugin();
     });
 }
 let createCover = (projectName, teamName, color) => {

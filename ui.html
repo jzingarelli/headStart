@@ -53,7 +53,7 @@
     </div>
 
     <div>
-      <input type="text" id="slackChannel" placeholder="#some-channel">
+      <input type="text" id="slackChannel" placeholder="#slack-channel-to-learn-more">
     </div>
     <div>
       <input type="text" id="productPOC" placeholder="PM Point of Contact">
@@ -274,13 +274,44 @@
   }
 
   document.getElementById('createTemplate').onclick = () => {
+    //assign project name value from input
     projectName = document.getElementById("projectName").value
+    if (projectName === "") {
+      projectName = "Project Title"
+    }
+
+    //assign team name value from input
     teamName = document.getElementById("teamName").value
+    if (teamName === "") {
+      teamName = "Team Name"
+    }
+    
+    //assign project description value from input
     projectDescription = document.getElementById("projectDescription").value
+    if (projectDescription === "") {
+      projectDescription = "Project Description"
+    }
+    
     productPOC = document.getElementById("productPOC").value
+    if (productPOC === "") {
+      productPOC = "Product POC"
+    }
+
     designPOC = document.getElementById("designPOC").value
+    if (designPOC === "") {
+      designPOC = "Design POC"
+    }
+
     engPOC = document.getElementById("engPOC").value
+    if (engPOC === "") {
+      engPOC = "Engineering POC"
+    }
+
     slackChannel = document.getElementById("slackChannel").value
+    if (slackChannel === "") {
+      engPOC = "#slackChannel"
+    }
+
     hexColor = currentColor
 
     function hexToRGB(h) {

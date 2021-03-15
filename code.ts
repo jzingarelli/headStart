@@ -20,6 +20,7 @@ async function loadFonts() {
 			style: "Bold"
 			}),
 	])
+  figma.closePlugin();
 }
 
 
