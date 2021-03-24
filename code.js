@@ -108,7 +108,6 @@ let createCover = (projectName, teamName, color) => {
     teamNameText.x = 40;
     teamNameText.y = 109;
     teamNameText.constraints = { "horizontal": "SCALE", "vertical": "CENTER" };
-    teamNameText.autoRename = false;
     //try to load custom font
     loadApercu().then((res) => {
         teamNameText.fontName = {
@@ -178,7 +177,6 @@ let createReadme = (projectName, projectDescription, productPOC, designPOC, engP
     text_1_43.strokeWeight = 0;
     text_1_43.strokeAlign = "INSIDE";
     text_1_43.constraints = { "horizontal": "SCALE", "vertical": "CENTER" };
-    text_1_43.autoRename = false;
     //try to load custom font
     loadApercu().then((res) => {
         text_1_43.fontName = {
@@ -216,7 +214,6 @@ let createReadme = (projectName, projectDescription, productPOC, designPOC, engP
     text_1_44.relativeTransform = [[1, 0, 0], [0, 1, 86]];
     text_1_44.y = 86;
     text_1_44.constraints = { "horizontal": "SCALE", "vertical": "CENTER" };
-    text_1_44.autoRename = false;
     //try to load custom font
     loadApercu().then((res) => {
         text_1_44.fontName = {
@@ -287,12 +284,10 @@ let createReadme = (projectName, projectDescription, productPOC, designPOC, engP
     // Create TEXT
     var text_23_223 = figma.createText();
     text_23_223.resize(133.0000000000, 32.0000000000);
-    text_23_223.name = "Colors";
     text_23_223.fills = [{ "type": "SOLID", "visible": true, "opacity": 1, "blendMode": "NORMAL", "color": { "r": 0.22745098173618317, "g": 0.2235294133424759, "b": 0.21960784494876862 } }];
     text_23_223.strokeWeight = 0;
     text_23_223.strokeAlign = "CENTER";
     text_23_223.constraints = { "horizontal": "SCALE", "vertical": "CENTER" };
-    text_23_223.autoRename = false;
     //try to load custom font
     loadApercu().then((res) => {
         text_23_223.fontName = {
@@ -333,12 +328,10 @@ let createReadme = (projectName, projectDescription, productPOC, designPOC, engP
     // Create TEXT
     var text_23_226 = figma.createText();
     text_23_226.resize(104.0000000000, 24.0000000000);
-    text_23_226.name = "Colors";
     text_23_226.fills = [{ "type": "SOLID", "visible": true, "opacity": 1, "blendMode": "NORMAL", "color": { "r": 0.3529411852359772, "g": 0.3450980484485626, "b": 0.34117648005485535 } }];
     text_23_226.strokeWeight = 0;
     text_23_226.strokeAlign = "CENTER";
     text_23_226.constraints = { "horizontal": "SCALE", "vertical": "CENTER" };
-    text_23_226.autoRename = false;
     //try to load custom font
     loadApercu().then((res) => {
         text_23_226.fontName = {
@@ -364,14 +357,12 @@ let createReadme = (projectName, projectDescription, productPOC, designPOC, engP
     frame_23_224.appendChild(text_23_226);
     // Create TEXT
     var text_23_227 = figma.createText();
-    text_23_227.name = "Colors";
     text_23_227.fills = [{ "type": "SOLID", "visible": true, "opacity": 1, "blendMode": "NORMAL", "color": { "r": 0.18039216101169586, "g": 0.4470588266849518, "b": 0.8235294222831726 } }];
     text_23_227.strokeWeight = 0;
     text_23_227.strokeAlign = "CENTER";
     text_23_227.relativeTransform = [[1, 0, 400], [0, 1, 0]];
     text_23_227.x = 400;
     text_23_227.constraints = { "horizontal": "SCALE", "vertical": "CENTER" };
-    text_23_227.autoRename = false;
     //try to load custom font
     loadApercu().then((res) => {
         text_23_227.fontName = {
@@ -410,14 +401,12 @@ let createReadme = (projectName, projectDescription, productPOC, designPOC, engP
     // Create TEXT
     var text_23_229 = figma.createText();
     text_23_229.resize(93.0000000000, 24.0000000000);
-    text_23_229.name = "Colors";
     text_23_229.fills = [{ "type": "SOLID", "visible": true, "opacity": 1, "blendMode": "NORMAL", "color": { "r": 0.3529411852359772, "g": 0.3450980484485626, "b": 0.34117648005485535 } }];
     text_23_229.strokeWeight = 0;
     text_23_229.strokeAlign = "CENTER";
     text_23_229.relativeTransform = [[1, 0, 0], [0, 1, 28]];
     text_23_229.y = 28;
     text_23_229.constraints = { "horizontal": "SCALE", "vertical": "CENTER" };
-    text_23_229.autoRename = false;
     //try to load custom font
     loadApercu().then((res) => {
         text_23_229.fontName = {
@@ -443,7 +432,6 @@ let createReadme = (projectName, projectDescription, productPOC, designPOC, engP
     frame_23_224.appendChild(text_23_229);
     // Create TEXT
     var text_23_230 = figma.createText();
-    text_23_230.name = "Colors";
     text_23_230.fills = [{ "type": "SOLID", "visible": true, "opacity": 1, "blendMode": "NORMAL", "color": { "r": 0.18039216101169586, "g": 0.4470588266849518, "b": 0.8235294222831726 } }];
     text_23_230.strokeWeight = 0;
     text_23_230.strokeAlign = "CENTER";
@@ -451,7 +439,6 @@ let createReadme = (projectName, projectDescription, productPOC, designPOC, engP
     text_23_230.x = 400;
     text_23_230.y = 28;
     text_23_230.constraints = { "horizontal": "SCALE", "vertical": "CENTER" };
-    text_23_230.autoRename = false;
     //try to load custom font
     loadApercu().then((res) => {
         text_23_230.fontName = {
@@ -490,14 +477,12 @@ let createReadme = (projectName, projectDescription, productPOC, designPOC, engP
     // Create TEXT
     var text_23_232 = figma.createText();
     text_23_232.resize(133.0000000000, 24.0000000000);
-    text_23_232.name = "Colors";
     text_23_232.fills = [{ "type": "SOLID", "visible": true, "opacity": 1, "blendMode": "NORMAL", "color": { "r": 0.3529411852359772, "g": 0.3450980484485626, "b": 0.34117648005485535 } }];
     text_23_232.strokeWeight = 0;
     text_23_232.strokeAlign = "CENTER";
     text_23_232.relativeTransform = [[1, 0, 0], [0, 1, 56]];
     text_23_232.y = 56;
     text_23_232.constraints = { "horizontal": "SCALE", "vertical": "CENTER" };
-    text_23_232.autoRename = false;
     //try to load custom font
     loadApercu().then((res) => {
         text_23_232.fontName = {
@@ -523,7 +508,6 @@ let createReadme = (projectName, projectDescription, productPOC, designPOC, engP
     frame_23_224.appendChild(text_23_232);
     // Create TEXT
     var text_23_233 = figma.createText();
-    text_23_233.name = "Colors";
     text_23_233.fills = [{ "type": "SOLID", "visible": true, "opacity": 1, "blendMode": "NORMAL", "color": { "r": 0.18039216101169586, "g": 0.4470588266849518, "b": 0.8235294222831726 } }];
     text_23_233.strokeWeight = 0;
     text_23_233.strokeAlign = "CENTER";
@@ -531,7 +515,6 @@ let createReadme = (projectName, projectDescription, productPOC, designPOC, engP
     text_23_233.x = 400;
     text_23_233.y = 56;
     text_23_233.constraints = { "horizontal": "SCALE", "vertical": "CENTER" };
-    text_23_233.autoRename = false;
     //try to load custom font
     loadApercu().then((res) => {
         text_23_233.fontName = {
@@ -580,12 +563,10 @@ let createReadme = (projectName, projectDescription, productPOC, designPOC, engP
     // Create TEXT
     var text_23_241 = figma.createText();
     text_23_241.resize(142.0000000000, 32.0000000000);
-    text_23_241.name = "Colors";
     text_23_241.fills = [{ "type": "SOLID", "visible": true, "opacity": 1, "blendMode": "NORMAL", "color": { "r": 0.22745098173618317, "g": 0.2235294133424759, "b": 0.21960784494876862 } }];
     text_23_241.strokeWeight = 0;
     text_23_241.strokeAlign = "CENTER";
     text_23_241.constraints = { "horizontal": "SCALE", "vertical": "CENTER" };
-    text_23_241.autoRename = false;
     //try to load custom font
     loadApercu().then((res) => {
         text_23_241.fontName = {
@@ -625,12 +606,10 @@ let createReadme = (projectName, projectDescription, productPOC, designPOC, engP
     // Create TEXT
     var text_23_244 = figma.createText();
     text_23_244.resize(135.0000000000, 24.0000000000);
-    text_23_244.name = "Colors";
     text_23_244.fills = [{ "type": "SOLID", "visible": true, "opacity": 1, "blendMode": "NORMAL", "color": { "r": 0.3529411852359772, "g": 0.3450980484485626, "b": 0.34117648005485535 } }];
     text_23_244.strokeWeight = 0;
     text_23_244.strokeAlign = "CENTER";
     text_23_244.constraints = { "horizontal": "SCALE", "vertical": "CENTER" };
-    text_23_244.autoRename = false;
     //try to load custom font
     loadApercu().then((res) => {
         text_23_244.fontName = {
@@ -657,14 +636,12 @@ let createReadme = (projectName, projectDescription, productPOC, designPOC, engP
     // Create TEXT
     var text_23_245 = figma.createText();
     text_23_245.resize(127.0000000000, 24.0000000000);
-    text_23_245.name = "Colors";
     text_23_245.fills = [{ "type": "SOLID", "visible": true, "opacity": 1, "blendMode": "NORMAL", "color": { "r": 0.18039216101169586, "g": 0.4470588266849518, "b": 0.8235294222831726 } }];
     text_23_245.strokeWeight = 0;
     text_23_245.strokeAlign = "CENTER";
     text_23_245.relativeTransform = [[1, 0, 400], [0, 1, 0]];
     text_23_245.x = 400;
     text_23_245.constraints = { "horizontal": "SCALE", "vertical": "CENTER" };
-    text_23_245.autoRename = false;
     //try to load custom font
     loadApercu().then((res) => {
         text_23_245.fontName = {
@@ -713,12 +690,10 @@ let createReadme = (projectName, projectDescription, productPOC, designPOC, engP
     // Create TEXT
     var text_23_247 = figma.createText();
     text_23_247.resize(54.0000000000, 32.0000000000);
-    text_23_247.name = "Colors";
     text_23_247.fills = [{ "type": "SOLID", "visible": true, "opacity": 1, "blendMode": "NORMAL", "color": { "r": 0.22745098173618317, "g": 0.2235294133424759, "b": 0.21960784494876862 } }];
     text_23_247.strokeWeight = 0;
     text_23_247.strokeAlign = "CENTER";
     text_23_247.constraints = { "horizontal": "SCALE", "vertical": "CENTER" };
-    text_23_247.autoRename = false;
     //try to load custom font
     loadApercu().then((res) => {
         text_23_247.fontName = {
@@ -759,12 +734,10 @@ let createReadme = (projectName, projectDescription, productPOC, designPOC, engP
     // Create TEXT
     var text_23_250 = figma.createText();
     text_23_250.resize(99.0000000000, 24.0000000000);
-    text_23_250.name = "Colors";
     text_23_250.fills = [{ "type": "SOLID", "visible": true, "opacity": 1, "blendMode": "NORMAL", "color": { "r": 0.3529411852359772, "g": 0.3450980484485626, "b": 0.34117648005485535 } }];
     text_23_250.strokeWeight = 0;
     text_23_250.strokeAlign = "CENTER";
     text_23_250.constraints = { "horizontal": "SCALE", "vertical": "CENTER" };
-    text_23_250.autoRename = false;
     //try to load custom font
     loadApercu().then((res) => {
         text_23_250.fontName = {
@@ -791,14 +764,12 @@ let createReadme = (projectName, projectDescription, productPOC, designPOC, engP
     // Create TEXT
     var text_23_251 = figma.createText();
     text_23_251.resize(60.0000000000, 24.0000000000);
-    text_23_251.name = "Colors";
     text_23_251.fills = [{ "type": "SOLID", "visible": true, "opacity": 1, "blendMode": "NORMAL", "color": { "r": 0.18039216101169586, "g": 0.4470588266849518, "b": 0.8235294222831726 } }];
     text_23_251.strokeWeight = 0;
     text_23_251.strokeAlign = "CENTER";
     text_23_251.relativeTransform = [[1, 0, 400], [0, 1, 0]];
     text_23_251.x = 400;
     text_23_251.constraints = { "horizontal": "SCALE", "vertical": "CENTER" };
-    text_23_251.autoRename = false;
     //try to load custom font
     loadApercu().then((res) => {
         text_23_251.fontName = {
@@ -865,12 +836,10 @@ let createReadme = (projectName, projectDescription, productPOC, designPOC, engP
     // Create TEXT
     var text_1_61 = figma.createText();
     text_1_61.resize(98.0000000000, 32.0000000000);
-    text_1_61.name = "Colors";
     text_1_61.fills = [{ "type": "SOLID", "visible": true, "opacity": 1, "blendMode": "NORMAL", "color": { "r": 0.22745098173618317, "g": 0.2235294133424759, "b": 0.21960784494876862 } }];
     text_1_61.strokeWeight = 0;
     text_1_61.strokeAlign = "CENTER";
     text_1_61.constraints = { "horizontal": "SCALE", "vertical": "CENTER" };
-    text_1_61.autoRename = false;
     //try to load custom font
     loadApercu().then((res) => {
         text_1_61.fontName = {
@@ -910,12 +879,10 @@ let createReadme = (projectName, projectDescription, productPOC, designPOC, engP
     // Create TEXT
     var text_1_64 = figma.createText();
     text_1_64.resize(960.0000000000, 72.0000000000);
-    text_1_64.name = "Colors";
     text_1_64.fills = [{ "type": "SOLID", "visible": true, "opacity": 1, "blendMode": "NORMAL", "color": { "r": 0.3529411852359772, "g": 0.3450980484485626, "b": 0.34117648005485535 } }];
     text_1_64.strokeWeight = 0;
     text_1_64.strokeAlign = "CENTER";
     text_1_64.constraints = { "horizontal": "SCALE", "vertical": "CENTER" };
-    text_1_64.autoRename = false;
     //try to load custom font
     loadApercu().then((res) => {
         text_1_64.fontName = {
