@@ -938,31 +938,31 @@ var createPage = (nameString) => {
     figma.root.appendChild(page);
 };
 var createEngHandoff = () => {
-    createPage("------⚒️ ENG HANDOFF ------");
-    createPage("iOS - Mobile");
-    createPage("iOS - Tablet");
-    createPage("Android - Mobile");
-    createPage("Android - Tablet");
+    createPage("-–––––⚒️ ENG HANDOFF ––––––");
+    createPage("iOS – Mobile");
+    createPage("iOS – Tablet");
+    createPage("Android – Mobile");
+    createPage("Android – Tablet");
     createPage("Web");
 };
 var createUserTesting = () => {
-    createPage("------ 🔬USER TESTING ------");
+    createPage("–––––– 🔬USER TESTING ––––––");
     createPage("Prototype 1");
 };
 var createExplore = () => {
-    createPage("------  🔮 EXPLORE ------");
+    createPage("––––––  🔮 EXPLORE ––––––");
     createPage("Explorations V0");
 };
 var createThink = () => {
-    createPage("---------- 🤔 THINK ----------");
+    createPage("–––––––––– 🤔 THINK ––––––––––");
     createPage("Research");
 };
 var createArchive = () => {
-    createPage("----------------------------------------");
+    createPage("––––––––––––––––––––––––––––––––––––––––");
     createPage("📦 ARCHIVE");
 };
 var createLocalComponents = () => {
-    createPage("----------------------------------------");
+    createPage("––––––––––––––––––––––––––––––––––––––––");
     createPage("LOCAL COMPONENTS");
 };
 figma.ui.onmessage = (event) => {
