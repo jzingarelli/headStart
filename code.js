@@ -13,8 +13,8 @@ figma.ui.resize(440, 900);
 function loadApercu() {
     return __awaiter(this, void 0, void 0, function* () {
         yield Promise.all([
-            figma.loadFontAsync({ family: "Apercu Po", style: "Regular" }),
-            figma.loadFontAsync({ family: "Apercu Po", style: "Bold" }),
+            figma.loadFontAsync({ family: "Apercu Pro", style: "Regular" }),
+            figma.loadFontAsync({ family: "Apercu Pro", style: "Bold" }),
         ]);
         figma.closePlugin();
     });
