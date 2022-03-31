@@ -9,23 +9,13 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 };
 figma.showUI(__html__);
 figma.ui.resize(440, 900);
-//load apercu
-function loadApercu() {
-    return __awaiter(this, void 0, void 0, function* () {
-        yield Promise.all([
-            figma.loadFontAsync({ family: "Apercu Pro", style: "Regular" }),
-            figma.loadFontAsync({ family: "Apercu Pro", style: "Bold" }),
-        ]);
-        figma.closePlugin();
-    });
-} //load roboto
+//load roboto
 function loadRoboto() {
     return __awaiter(this, void 0, void 0, function* () {
         yield Promise.all([
             figma.loadFontAsync({ family: "Roboto", style: "Regular" }),
             figma.loadFontAsync({ family: "Roboto", style: "Bold" }),
         ]);
-        figma.closePlugin();
     });
 }
 let createCover = (projectName, teamName, color) => {
@@ -70,32 +60,15 @@ let createCover = (projectName, teamName, color) => {
     projectNameText.relativeTransform = [[1, 0, 40], [0, 1, 40]];
     projectNameText.x = 40;
     projectNameText.y = 40;
-    //try to load custom font
-    loadApercu().then((res) => {
-        projectNameText.fontName = {
-            family: "Apercu Pro",
-            style: "Bold"
-        };
-        projectNameText.characters = projectName;
-        projectNameText.textAutoResize = "HEIGHT";
-        projectNameText.fontSize = 56;
-        projectNameText.letterSpacing = { "unit": "PERCENT", "value": -5.5 };
-        projectNameText.lineHeight = { "unit": "PERCENT", "value": 114.99999761581421 };
-    }).catch(() => {
-        //catch the error loading custom font
-        //load roboto instead
-        loadRoboto().then((res) => {
-            projectNameText.fontName = {
-                family: "Roboto",
-                style: "Bold"
-            };
-            projectNameText.characters = projectName;
-            projectNameText.textAutoResize = "HEIGHT";
-            projectNameText.fontSize = 56;
-            projectNameText.letterSpacing = { "unit": "PERCENT", "value": -5.5 };
-            projectNameText.lineHeight = { "unit": "PERCENT", "value": 114.99999761581421 };
-        });
-    });
+    projectNameText.fontName = {
+        family: "Roboto",
+        style: "Bold"
+    };
+    projectNameText.characters = projectName;
+    projectNameText.textAutoResize = "HEIGHT";
+    projectNameText.fontSize = 56;
+    projectNameText.letterSpacing = { "unit": "PERCENT", "value": -5.5 };
+    projectNameText.lineHeight = { "unit": "PERCENT", "value": 114.99999761581421 };
     frame_7_60.appendChild(projectNameText);
     // Create Team Name
     var teamNameText = figma.createText();
@@ -108,30 +81,14 @@ let createCover = (projectName, teamName, color) => {
     teamNameText.x = 40;
     teamNameText.y = 109;
     teamNameText.constraints = { "horizontal": "SCALE", "vertical": "CENTER" };
-    //try to load custom font
-    loadApercu().then((res) => {
-        teamNameText.fontName = {
-            family: "Apercu Pro",
-            style: "Regular"
-        };
-        teamNameText.characters = teamName;
-        teamNameText.fontSize = 24;
-        teamNameText.letterSpacing = { "unit": "PERCENT", "value": -3 };
-        teamNameText.lineHeight = { "unit": "PERCENT", "value": 132.00000524520874 };
-    }).catch(() => {
-        //catch the error loading custom font
-        //load roboto instead
-        loadRoboto().then((res) => {
-            teamNameText.fontName = {
-                family: "Roboto",
-                style: "Regular"
-            };
-            teamNameText.characters = teamName;
-            teamNameText.fontSize = 24;
-            teamNameText.letterSpacing = { "unit": "PERCENT", "value": -3 };
-            teamNameText.lineHeight = { "unit": "PERCENT", "value": 132.00000524520874 };
-        });
-    });
+    teamNameText.fontName = {
+        family: "Roboto",
+        style: "Regular"
+    };
+    teamNameText.characters = teamName;
+    teamNameText.fontSize = 24;
+    teamNameText.letterSpacing = { "unit": "PERCENT", "value": -3 };
+    teamNameText.lineHeight = { "unit": "PERCENT", "value": 132.00000524520874 };
     frame_7_60.appendChild(teamNameText);
 };
 let createReadme = (projectName, projectDescription, productPOC, designPOC, engPOC, slackChannel) => {
@@ -166,6 +123,7 @@ let createReadme = (projectName, projectDescription, productPOC, designPOC, engP
     frame_1_42.x = 80;
     frame_1_42.y = 56;
     frame_1_42.layoutMode = "VERTICAL";
+    frame_1_42.primaryAxisSizingMode = "AUTO";
     frame_1_42.counterAxisSizingMode = "AUTO";
     frame_1_42.itemSpacing = 22;
     frame_1_39.appendChild(frame_1_42);
@@ -177,32 +135,15 @@ let createReadme = (projectName, projectDescription, productPOC, designPOC, engP
     text_1_43.strokeWeight = 0;
     text_1_43.strokeAlign = "INSIDE";
     text_1_43.constraints = { "horizontal": "SCALE", "vertical": "CENTER" };
-    //try to load custom font
-    loadApercu().then((res) => {
-        text_1_43.fontName = {
-            family: "Apercu Pro",
-            style: "Bold"
-        };
-        text_1_43.characters = projectName;
-        text_1_43.fontSize = 56;
-        text_1_43.textAutoResize = "HEIGHT";
-        text_1_43.letterSpacing = { "unit": "PERCENT", "value": -5.5 };
-        text_1_43.lineHeight = { "unit": "PERCENT", "value": 114.99999761581421 };
-    }).catch(() => {
-        //catch the error loading custom font
-        //load roboto instead
-        loadRoboto().then((res) => {
-            text_1_43.fontName = {
-                family: "Roboto",
-                style: "Bold"
-            };
-            text_1_43.characters = projectName;
-            text_1_43.fontSize = 56;
-            text_1_43.textAutoResize = "HEIGHT";
-            text_1_43.letterSpacing = { "unit": "PERCENT", "value": -5.5 };
-            text_1_43.lineHeight = { "unit": "PERCENT", "value": 114.99999761581421 };
-        });
-    });
+    text_1_43.fontName = {
+        family: "Roboto",
+        style: "Bold"
+    };
+    text_1_43.characters = projectName;
+    text_1_43.fontSize = 56;
+    text_1_43.textAutoResize = "HEIGHT";
+    text_1_43.letterSpacing = { "unit": "PERCENT", "value": -5.5 };
+    text_1_43.lineHeight = { "unit": "PERCENT", "value": 114.99999761581421 };
     frame_1_42.appendChild(text_1_43);
     // Create TEXT
     var text_1_44 = figma.createText();
@@ -214,32 +155,15 @@ let createReadme = (projectName, projectDescription, productPOC, designPOC, engP
     text_1_44.relativeTransform = [[1, 0, 0], [0, 1, 86]];
     text_1_44.y = 86;
     text_1_44.constraints = { "horizontal": "SCALE", "vertical": "CENTER" };
-    //try to load custom font
-    loadApercu().then((res) => {
-        text_1_44.fontName = {
-            family: "Apercu Pro",
-            style: "Bold"
-        };
-        text_1_44.characters = projectDescription;
-        text_1_44.fontSize = 24;
-        text_1_44.textAutoResize = "HEIGHT";
-        text_1_44.letterSpacing = { "unit": "PERCENT", "value": -3 };
-        text_1_44.lineHeight = { "unit": "PERCENT", "value": 132.00000524520874 };
-    }).catch(() => {
-        //catch the error loading custom font
-        //load roboto instead
-        loadRoboto().then((res) => {
-            text_1_44.fontName = {
-                family: "Roboto",
-                style: "Bold"
-            };
-            text_1_44.characters = projectDescription;
-            text_1_44.fontSize = 24;
-            text_1_44.textAutoResize = "HEIGHT";
-            text_1_44.letterSpacing = { "unit": "PERCENT", "value": -3 };
-            text_1_44.lineHeight = { "unit": "PERCENT", "value": 132.00000524520874 };
-        });
-    });
+    text_1_44.fontName = {
+        family: "Roboto",
+        style: "Bold"
+    };
+    text_1_44.characters = projectDescription;
+    text_1_44.fontSize = 24;
+    text_1_44.textAutoResize = "HEIGHT";
+    text_1_44.letterSpacing = { "unit": "PERCENT", "value": -3 };
+    text_1_44.lineHeight = { "unit": "PERCENT", "value": 132.00000524520874 };
     frame_1_42.appendChild(text_1_44);
     // Create RECTANGLE
     var rectangle_1_45 = figma.createRectangle();
@@ -288,30 +212,14 @@ let createReadme = (projectName, projectDescription, productPOC, designPOC, engP
     text_23_223.strokeWeight = 0;
     text_23_223.strokeAlign = "CENTER";
     text_23_223.constraints = { "horizontal": "SCALE", "vertical": "CENTER" };
-    //try to load custom font
-    loadApercu().then((res) => {
-        text_23_223.fontName = {
-            family: "Apercu Pro",
-            style: "Bold"
-        };
-        text_23_223.characters = "Project team";
-        text_23_223.fontSize = 24;
-        text_23_223.letterSpacing = { "unit": "PERCENT", "value": -3 };
-        text_23_223.lineHeight = { "unit": "PERCENT", "value": 132.00000524520874 };
-    }).catch(() => {
-        //catch the error loading custom font
-        //load roboto instead
-        loadRoboto().then((res) => {
-            text_23_223.fontName = {
-                family: "Roboto",
-                style: "Bold"
-            };
-            text_23_223.characters = "Project team";
-            text_23_223.fontSize = 24;
-            text_23_223.letterSpacing = { "unit": "PERCENT", "value": -3 };
-            text_23_223.lineHeight = { "unit": "PERCENT", "value": 132.00000524520874 };
-        });
-    });
+    text_23_223.fontName = {
+        family: "Roboto",
+        style: "Bold"
+    };
+    text_23_223.characters = "Project team";
+    text_23_223.fontSize = 24;
+    text_23_223.letterSpacing = { "unit": "PERCENT", "value": -3 };
+    text_23_223.lineHeight = { "unit": "PERCENT", "value": 132.00000524520874 };
     frame_23_222.appendChild(text_23_223);
     // Create FRAME
     var frame_23_224 = figma.createFrame();
@@ -332,28 +240,13 @@ let createReadme = (projectName, projectDescription, productPOC, designPOC, engP
     text_23_226.strokeWeight = 0;
     text_23_226.strokeAlign = "CENTER";
     text_23_226.constraints = { "horizontal": "SCALE", "vertical": "CENTER" };
-    //try to load custom font
-    loadApercu().then((res) => {
-        text_23_226.fontName = {
-            family: "Apercu Pro",
-            style: "Regular"
-        };
-        text_23_226.characters = "PM";
-        text_23_226.fontSize = 18;
-        text_23_226.lineHeight = { "unit": "PERCENT", "value": 132.00000524520874 };
-    }).catch(() => {
-        //catch the error loading custom font
-        //load roboto instead
-        loadRoboto().then((res) => {
-            text_23_226.fontName = {
-                family: "Roboto",
-                style: "Regular"
-            };
-            text_23_226.characters = "PM";
-            text_23_226.fontSize = 18;
-            text_23_226.lineHeight = { "unit": "PERCENT", "value": 132.00000524520874 };
-        });
-    });
+    text_23_226.fontName = {
+        family: "Roboto",
+        style: "Regular"
+    };
+    text_23_226.characters = "PM";
+    text_23_226.fontSize = 18;
+    text_23_226.lineHeight = { "unit": "PERCENT", "value": 132.00000524520874 };
     frame_23_224.appendChild(text_23_226);
     // Create TEXT
     var text_23_227 = figma.createText();
@@ -363,28 +256,13 @@ let createReadme = (projectName, projectDescription, productPOC, designPOC, engP
     text_23_227.relativeTransform = [[1, 0, 400], [0, 1, 0]];
     text_23_227.x = 400;
     text_23_227.constraints = { "horizontal": "SCALE", "vertical": "CENTER" };
-    //try to load custom font
-    loadApercu().then((res) => {
-        text_23_227.fontName = {
-            family: "Apercu Pro",
-            style: "Regular"
-        };
-        text_23_227.characters = productPOC;
-        text_23_227.fontSize = 18;
-        text_23_227.lineHeight = { "unit": "PERCENT", "value": 132.00000524520874 };
-    }).catch(() => {
-        //catch the error loading custom font
-        //load roboto instead
-        loadRoboto().then((res) => {
-            text_23_227.fontName = {
-                family: "Roboto",
-                style: "Regular"
-            };
-            text_23_227.characters = productPOC;
-            text_23_227.fontSize = 18;
-            text_23_227.lineHeight = { "unit": "PERCENT", "value": 132.00000524520874 };
-        });
-    });
+    text_23_227.fontName = {
+        family: "Roboto",
+        style: "Regular"
+    };
+    text_23_227.characters = productPOC;
+    text_23_227.fontSize = 18;
+    text_23_227.lineHeight = { "unit": "PERCENT", "value": 132.00000524520874 };
     frame_23_224.appendChild(text_23_227);
     // Create GROUP
     var group_23_225 = figma.group([text_23_226, text_23_227], frame_23_224);
@@ -407,28 +285,13 @@ let createReadme = (projectName, projectDescription, productPOC, designPOC, engP
     text_23_229.relativeTransform = [[1, 0, 0], [0, 1, 28]];
     text_23_229.y = 28;
     text_23_229.constraints = { "horizontal": "SCALE", "vertical": "CENTER" };
-    //try to load custom font
-    loadApercu().then((res) => {
-        text_23_229.fontName = {
-            family: "Apercu Pro",
-            style: "Regular"
-        };
-        text_23_229.characters = "Design";
-        text_23_229.fontSize = 18;
-        text_23_229.lineHeight = { "unit": "PERCENT", "value": 132.00000524520874 };
-    }).catch(() => {
-        //catch the error loading custom font
-        //load roboto instead
-        loadRoboto().then((res) => {
-            text_23_229.fontName = {
-                family: "Roboto",
-                style: "Regular"
-            };
-            text_23_229.characters = "Design";
-            text_23_229.fontSize = 18;
-            text_23_229.lineHeight = { "unit": "PERCENT", "value": 132.00000524520874 };
-        });
-    });
+    text_23_229.fontName = {
+        family: "Roboto",
+        style: "Regular"
+    };
+    text_23_229.characters = "Design";
+    text_23_229.fontSize = 18;
+    text_23_229.lineHeight = { "unit": "PERCENT", "value": 132.00000524520874 };
     frame_23_224.appendChild(text_23_229);
     // Create TEXT
     var text_23_230 = figma.createText();
@@ -439,28 +302,13 @@ let createReadme = (projectName, projectDescription, productPOC, designPOC, engP
     text_23_230.x = 400;
     text_23_230.y = 28;
     text_23_230.constraints = { "horizontal": "SCALE", "vertical": "CENTER" };
-    //try to load custom font
-    loadApercu().then((res) => {
-        text_23_230.fontName = {
-            family: "Apercu Pro",
-            style: "Regular"
-        };
-        text_23_230.characters = designPOC;
-        text_23_230.fontSize = 18;
-        text_23_230.lineHeight = { "unit": "PERCENT", "value": 132.00000524520874 };
-    }).catch(() => {
-        //catch the error loading custom font
-        //load roboto instead
-        loadRoboto().then((res) => {
-            text_23_230.fontName = {
-                family: "Roboto",
-                style: "Regular"
-            };
-            text_23_230.characters = designPOC;
-            text_23_230.fontSize = 18;
-            text_23_230.lineHeight = { "unit": "PERCENT", "value": 132.00000524520874 };
-        });
-    });
+    text_23_230.fontName = {
+        family: "Roboto",
+        style: "Regular"
+    };
+    text_23_230.characters = designPOC;
+    text_23_230.fontSize = 18;
+    text_23_230.lineHeight = { "unit": "PERCENT", "value": 132.00000524520874 };
     frame_23_224.appendChild(text_23_230);
     // Create GROUP
     var group_23_228 = figma.group([text_23_229, text_23_230], frame_23_224);
@@ -483,28 +331,13 @@ let createReadme = (projectName, projectDescription, productPOC, designPOC, engP
     text_23_232.relativeTransform = [[1, 0, 0], [0, 1, 56]];
     text_23_232.y = 56;
     text_23_232.constraints = { "horizontal": "SCALE", "vertical": "CENTER" };
-    //try to load custom font
-    loadApercu().then((res) => {
-        text_23_232.fontName = {
-            family: "Apercu Pro",
-            style: "Regular"
-        };
-        text_23_232.characters = "Engineering";
-        text_23_232.fontSize = 18;
-        text_23_232.lineHeight = { "unit": "PERCENT", "value": 132.00000524520874 };
-    }).catch(() => {
-        //catch the error loading custom font
-        //load roboto instead
-        loadRoboto().then((res) => {
-            text_23_232.fontName = {
-                family: "Roboto",
-                style: "Regular"
-            };
-            text_23_232.characters = "Engineering";
-            text_23_232.fontSize = 18;
-            text_23_232.lineHeight = { "unit": "PERCENT", "value": 132.00000524520874 };
-        });
-    });
+    text_23_232.fontName = {
+        family: "Roboto",
+        style: "Regular"
+    };
+    text_23_232.characters = "Engineering";
+    text_23_232.fontSize = 18;
+    text_23_232.lineHeight = { "unit": "PERCENT", "value": 132.00000524520874 };
     frame_23_224.appendChild(text_23_232);
     // Create TEXT
     var text_23_233 = figma.createText();
@@ -515,28 +348,13 @@ let createReadme = (projectName, projectDescription, productPOC, designPOC, engP
     text_23_233.x = 400;
     text_23_233.y = 56;
     text_23_233.constraints = { "horizontal": "SCALE", "vertical": "CENTER" };
-    //try to load custom font
-    loadApercu().then((res) => {
-        text_23_233.fontName = {
-            family: "Apercu Pro",
-            style: "Regular"
-        };
-        text_23_233.characters = engPOC;
-        text_23_233.fontSize = 18;
-        text_23_233.lineHeight = { "unit": "PERCENT", "value": 132.00000524520874 };
-    }).catch(() => {
-        //catch the error loading custom font
-        //load roboto instead
-        loadRoboto().then((res) => {
-            text_23_233.fontName = {
-                family: "Roboto",
-                style: "Regular"
-            };
-            text_23_233.characters = engPOC;
-            text_23_233.fontSize = 18;
-            text_23_233.lineHeight = { "unit": "PERCENT", "value": 132.00000524520874 };
-        });
-    });
+    text_23_233.fontName = {
+        family: "Roboto",
+        style: "Regular"
+    };
+    text_23_233.characters = engPOC;
+    text_23_233.fontSize = 18;
+    text_23_233.lineHeight = { "unit": "PERCENT", "value": 132.00000524520874 };
     frame_23_224.appendChild(text_23_233);
     // Create GROUP
     var group_23_231 = figma.group([text_23_232, text_23_233], frame_23_224);
@@ -567,30 +385,14 @@ let createReadme = (projectName, projectDescription, productPOC, designPOC, engP
     text_23_241.strokeWeight = 0;
     text_23_241.strokeAlign = "CENTER";
     text_23_241.constraints = { "horizontal": "SCALE", "vertical": "CENTER" };
-    //try to load custom font
-    loadApercu().then((res) => {
-        text_23_241.fontName = {
-            family: "Apercu Pro",
-            style: "Bold"
-        };
-        text_23_241.characters = "Slack channel";
-        text_23_241.fontSize = 24;
-        text_23_241.letterSpacing = { "unit": "PERCENT", "value": -3 };
-        text_23_241.lineHeight = { "unit": "PERCENT", "value": 132.00000524520874 };
-    }).catch(() => {
-        //catch the error loading custom font
-        //load roboto instead
-        loadRoboto().then((res) => {
-            text_23_241.fontName = {
-                family: "Roboto",
-                style: "Bold"
-            };
-            text_23_241.characters = "Slack channel";
-            text_23_241.fontSize = 24;
-            text_23_241.letterSpacing = { "unit": "PERCENT", "value": -3 };
-            text_23_241.lineHeight = { "unit": "PERCENT", "value": 132.00000524520874 };
-        });
-    });
+    text_23_241.fontName = {
+        family: "Roboto",
+        style: "Bold"
+    };
+    text_23_241.characters = "Slack channel";
+    text_23_241.fontSize = 24;
+    text_23_241.letterSpacing = { "unit": "PERCENT", "value": -3 };
+    text_23_241.lineHeight = { "unit": "PERCENT", "value": 132.00000524520874 };
     frame_23_240.appendChild(text_23_241);
     // Create FRAME
     var frame_23_242 = figma.createFrame();
@@ -610,28 +412,13 @@ let createReadme = (projectName, projectDescription, productPOC, designPOC, engP
     text_23_244.strokeWeight = 0;
     text_23_244.strokeAlign = "CENTER";
     text_23_244.constraints = { "horizontal": "SCALE", "vertical": "CENTER" };
-    //try to load custom font
-    loadApercu().then((res) => {
-        text_23_244.fontName = {
-            family: "Apercu Pro",
-            style: "Regular"
-        };
-        text_23_244.characters = "To find out more:";
-        text_23_244.fontSize = 18;
-        text_23_244.lineHeight = { "unit": "PERCENT", "value": 132.00000524520874 };
-    }).catch(() => {
-        //catch the error loading custom font
-        //load roboto instead
-        loadRoboto().then((res) => {
-            text_23_244.fontName = {
-                family: "Roboto",
-                style: "Regular"
-            };
-            text_23_244.characters = "To find out more:";
-            text_23_244.fontSize = 18;
-            text_23_244.lineHeight = { "unit": "PERCENT", "value": 132.00000524520874 };
-        });
-    });
+    text_23_244.fontName = {
+        family: "Roboto",
+        style: "Regular"
+    };
+    text_23_244.characters = "To find out more:";
+    text_23_244.fontSize = 18;
+    text_23_244.lineHeight = { "unit": "PERCENT", "value": 132.00000524520874 };
     frame_23_242.appendChild(text_23_244);
     // Create TEXT
     var text_23_245 = figma.createText();
@@ -642,28 +429,13 @@ let createReadme = (projectName, projectDescription, productPOC, designPOC, engP
     text_23_245.relativeTransform = [[1, 0, 400], [0, 1, 0]];
     text_23_245.x = 400;
     text_23_245.constraints = { "horizontal": "SCALE", "vertical": "CENTER" };
-    //try to load custom font
-    loadApercu().then((res) => {
-        text_23_245.fontName = {
-            family: "Apercu Pro",
-            style: "Regular"
-        };
-        text_23_245.characters = slackChannel;
-        text_23_245.fontSize = 18;
-        text_23_245.lineHeight = { "unit": "PERCENT", "value": 132.00000524520874 };
-    }).catch(() => {
-        //catch the error loading custom font
-        //load roboto instead
-        loadRoboto().then((res) => {
-            text_23_245.fontName = {
-                family: "Roboto",
-                style: "Regular"
-            };
-            text_23_245.characters = slackChannel;
-            text_23_245.fontSize = 18;
-            text_23_245.lineHeight = { "unit": "PERCENT", "value": 132.00000524520874 };
-        });
-    });
+    text_23_245.fontName = {
+        family: "Roboto",
+        style: "Regular"
+    };
+    text_23_245.characters = slackChannel;
+    text_23_245.fontSize = 18;
+    text_23_245.lineHeight = { "unit": "PERCENT", "value": 132.00000524520874 };
     frame_23_242.appendChild(text_23_245);
     // Create GROUP
     var group_23_243 = figma.group([text_23_244, text_23_245], frame_23_242);
@@ -694,30 +466,14 @@ let createReadme = (projectName, projectDescription, productPOC, designPOC, engP
     text_23_247.strokeWeight = 0;
     text_23_247.strokeAlign = "CENTER";
     text_23_247.constraints = { "horizontal": "SCALE", "vertical": "CENTER" };
-    //try to load custom font
-    loadApercu().then((res) => {
-        text_23_247.fontName = {
-            family: "Apercu Pro",
-            style: "Bold"
-        };
-        text_23_247.characters = "Links";
-        text_23_247.fontSize = 24;
-        text_23_247.letterSpacing = { "unit": "PERCENT", "value": -3 };
-        text_23_247.lineHeight = { "unit": "PERCENT", "value": 132.00000524520874 };
-    }).catch(() => {
-        //catch the error loading custom font
-        //load roboto instead
-        loadRoboto().then((res) => {
-            text_23_247.fontName = {
-                family: "Roboto",
-                style: "Bold"
-            };
-            text_23_247.characters = "Links";
-            text_23_247.fontSize = 24;
-            text_23_247.letterSpacing = { "unit": "PERCENT", "value": -3 };
-            text_23_247.lineHeight = { "unit": "PERCENT", "value": 132.00000524520874 };
-        });
-    });
+    text_23_247.fontName = {
+        family: "Roboto",
+        style: "Bold"
+    };
+    text_23_247.characters = "Links";
+    text_23_247.fontSize = 24;
+    text_23_247.letterSpacing = { "unit": "PERCENT", "value": -3 };
+    text_23_247.lineHeight = { "unit": "PERCENT", "value": 132.00000524520874 };
     frame_23_246.appendChild(text_23_247);
     // Create FRAME
     var frame_23_248 = figma.createFrame();
@@ -738,28 +494,13 @@ let createReadme = (projectName, projectDescription, productPOC, designPOC, engP
     text_23_250.strokeWeight = 0;
     text_23_250.strokeAlign = "CENTER";
     text_23_250.constraints = { "horizontal": "SCALE", "vertical": "CENTER" };
-    //try to load custom font
-    loadApercu().then((res) => {
-        text_23_250.fontName = {
-            family: "Apercu Pro",
-            style: "Regular"
-        };
-        text_23_250.characters = "Project brief";
-        text_23_250.fontSize = 18;
-        text_23_250.lineHeight = { "unit": "PERCENT", "value": 132.00000524520874 };
-    }).catch(() => {
-        //catch the error loading custom font
-        //load roboto instead
-        loadRoboto().then((res) => {
-            text_23_250.fontName = {
-                family: "Roboto",
-                style: "Regular"
-            };
-            text_23_250.characters = "Project brief";
-            text_23_250.fontSize = 18;
-            text_23_250.lineHeight = { "unit": "PERCENT", "value": 132.00000524520874 };
-        });
-    });
+    text_23_250.fontName = {
+        family: "Roboto",
+        style: "Regular"
+    };
+    text_23_250.characters = "Project brief";
+    text_23_250.fontSize = 18;
+    text_23_250.lineHeight = { "unit": "PERCENT", "value": 132.00000524520874 };
     frame_23_248.appendChild(text_23_250);
     // Create TEXT
     var text_23_251 = figma.createText();
@@ -770,28 +511,13 @@ let createReadme = (projectName, projectDescription, productPOC, designPOC, engP
     text_23_251.relativeTransform = [[1, 0, 400], [0, 1, 0]];
     text_23_251.x = 400;
     text_23_251.constraints = { "horizontal": "SCALE", "vertical": "CENTER" };
-    //try to load custom font
-    loadApercu().then((res) => {
-        text_23_251.fontName = {
-            family: "Apercu Pro",
-            style: "Regular"
-        };
-        text_23_251.characters = "https://";
-        text_23_251.fontSize = 18;
-        text_23_251.lineHeight = { "unit": "PERCENT", "value": 132.00000524520874 };
-    }).catch(() => {
-        //catch the error loading custom font
-        //load roboto instead
-        loadRoboto().then((res) => {
-            text_23_251.fontName = {
-                family: "Roboto",
-                style: "Regular"
-            };
-            text_23_251.characters = "https://";
-            text_23_251.fontSize = 18;
-            text_23_251.lineHeight = { "unit": "PERCENT", "value": 132.00000524520874 };
-        });
-    });
+    text_23_251.fontName = {
+        family: "Roboto",
+        style: "Regular"
+    };
+    text_23_251.characters = "https://";
+    text_23_251.fontSize = 18;
+    text_23_251.lineHeight = { "unit": "PERCENT", "value": 132.00000524520874 };
     frame_23_248.appendChild(text_23_251);
     // Create GROUP
     var group_23_249 = figma.group([text_23_250, text_23_251], frame_23_248);
@@ -840,30 +566,14 @@ let createReadme = (projectName, projectDescription, productPOC, designPOC, engP
     text_1_61.strokeWeight = 0;
     text_1_61.strokeAlign = "CENTER";
     text_1_61.constraints = { "horizontal": "SCALE", "vertical": "CENTER" };
-    //try to load custom font
-    loadApercu().then((res) => {
-        text_1_61.fontName = {
-            family: "Apercu Pro",
-            style: "Bold"
-        };
-        text_1_61.characters = "Overview";
-        text_1_61.fontSize = 24;
-        text_1_61.letterSpacing = { "unit": "PERCENT", "value": -3 };
-        text_1_61.lineHeight = { "unit": "PERCENT", "value": 132.00000524520874 };
-    }).catch(() => {
-        //catch the error loading custom font
-        //load roboto instead
-        loadRoboto().then((res) => {
-            text_1_61.fontName = {
-                family: "Roboto",
-                style: "Bold"
-            };
-            text_1_61.characters = "Overview";
-            text_1_61.fontSize = 24;
-            text_1_61.letterSpacing = { "unit": "PERCENT", "value": -3 };
-            text_1_61.lineHeight = { "unit": "PERCENT", "value": 132.00000524520874 };
-        });
-    });
+    text_1_61.fontName = {
+        family: "Roboto",
+        style: "Bold"
+    };
+    text_1_61.characters = "Overview";
+    text_1_61.fontSize = 24;
+    text_1_61.letterSpacing = { "unit": "PERCENT", "value": -3 };
+    text_1_61.lineHeight = { "unit": "PERCENT", "value": 132.00000524520874 };
     frame_1_60.appendChild(text_1_61);
     // Create FRAME
     var frame_1_62 = figma.createFrame();
@@ -883,30 +593,14 @@ let createReadme = (projectName, projectDescription, productPOC, designPOC, engP
     text_1_64.strokeWeight = 0;
     text_1_64.strokeAlign = "CENTER";
     text_1_64.constraints = { "horizontal": "SCALE", "vertical": "CENTER" };
-    //try to load custom font
-    loadApercu().then((res) => {
-        text_1_64.fontName = {
-            family: "Apercu Pro",
-            style: "Regular"
-        };
-        text_1_64.characters = "The overview page is another opportunity to provide more context. Help others with finding additional resources and provide information on who they can reach out to with feedback or questions. Feel free to add or remove sections and line items as needed and consider adding separate links to documents like project briefs or research.";
-        text_1_64.fontSize = 18;
-        text_1_64.textAutoResize = "HEIGHT";
-        text_1_64.lineHeight = { "unit": "PERCENT", "value": 132.00000524520874 };
-    }).catch(() => {
-        //catch the error loading custom font
-        //load roboto instead
-        loadRoboto().then((res) => {
-            text_1_64.fontName = {
-                family: "Roboto",
-                style: "Regular"
-            };
-            text_1_64.characters = "The overview page is another opportunity to provide more context. Help others with finding additional resources and provide information on who they can reach out to with feedback or questions. Feel free to add or remove sections and line items as needed and consider adding separate links to documents like project briefs or research.";
-            text_1_64.fontSize = 18;
-            text_1_64.textAutoResize = "HEIGHT";
-            text_1_64.lineHeight = { "unit": "PERCENT", "value": 132.00000524520874 };
-        });
-    });
+    text_1_64.fontName = {
+        family: "Roboto",
+        style: "Regular"
+    };
+    text_1_64.characters = "The overview page is another opportunity to provide more context. Help others with finding additional resources and provide information on who they can reach out to with feedback or questions. Feel free to add or remove sections and line items as needed and consider adding separate links to documents like project briefs or research.";
+    text_1_64.fontSize = 18;
+    text_1_64.textAutoResize = "HEIGHT";
+    text_1_64.lineHeight = { "unit": "PERCENT", "value": 132.00000524520874 };
     frame_1_62.appendChild(text_1_64);
     // Create GROUP
     var group_1_63 = figma.group([text_1_64], frame_1_62);
@@ -967,13 +661,17 @@ var createLocalComponents = () => {
 };
 figma.ui.onmessage = (event) => {
     if (event.type === "createProject") {
-        createCover(event.projectName, event.teamName, event.color);
-        createReadme(event.projectName, event.projectDescription, event.productPOC, event.designPOC, event.engPOC, event.slackChannel);
-        createEngHandoff();
-        createUserTesting();
-        createExplore();
-        createThink();
-        createArchive();
-        createLocalComponents();
+        loadRoboto().then(() => {
+            console.log("roboto has loaded");
+            createCover(event.projectName, event.teamName, event.color);
+            createReadme(event.projectName, event.projectDescription, event.productPOC, event.designPOC, event.engPOC, event.slackChannel);
+            createEngHandoff();
+            createUserTesting();
+            createExplore();
+            createThink();
+            createArchive();
+            createLocalComponents();
+            figma.closePlugin();
+        });
     }
 };
