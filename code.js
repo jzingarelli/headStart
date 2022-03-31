@@ -92,11 +92,11 @@ let createCover = (projectName, teamName, color) => {
     frame_7_60.appendChild(teamNameText);
 };
 let createReadme = (projectName, projectDescription, productPOC, designPOC, engPOC, slackChannel) => {
-    //create cover page
+    //create ReadMe page
     var readmePage = figma.createPage();
     readmePage.name = "📖 README";
     figma.root.insertChild(1, readmePage);
-    //set thumbnail page to current page
+    //set readMe page to current page
     figma.currentPage = readmePage;
     // Create README FRAME
     var frame_1_39 = figma.createFrame();
@@ -125,6 +125,7 @@ let createReadme = (projectName, projectDescription, productPOC, designPOC, engP
     frame_1_42.layoutMode = "VERTICAL";
     frame_1_42.primaryAxisSizingMode = "AUTO";
     frame_1_42.counterAxisSizingMode = "AUTO";
+    frame_1_42.layoutAlign = "STRETCH";
     frame_1_42.itemSpacing = 22;
     frame_1_39.appendChild(frame_1_42);
     // Create PROJECT TITLE
@@ -135,6 +136,7 @@ let createReadme = (projectName, projectDescription, productPOC, designPOC, engP
     text_1_43.strokeWeight = 0;
     text_1_43.strokeAlign = "INSIDE";
     text_1_43.constraints = { "horizontal": "SCALE", "vertical": "CENTER" };
+    text_1_43.layoutAlign = "STRETCH";
     text_1_43.fontName = {
         family: "Roboto",
         style: "Bold"
@@ -155,6 +157,7 @@ let createReadme = (projectName, projectDescription, productPOC, designPOC, engP
     text_1_44.relativeTransform = [[1, 0, 0], [0, 1, 86]];
     text_1_44.y = 86;
     text_1_44.constraints = { "horizontal": "SCALE", "vertical": "CENTER" };
+    text_1_44.layoutAlign = "STRETCH";
     text_1_44.fontName = {
         family: "Roboto",
         style: "Bold"
@@ -173,6 +176,7 @@ let createReadme = (projectName, projectDescription, productPOC, designPOC, engP
     rectangle_1_45.relativeTransform = [[1, 0, 80], [0, 1, 230]];
     rectangle_1_45.x = 80;
     rectangle_1_45.y = 230;
+    rectangle_1_45.layoutAlign = "STRETCH";
     frame_1_39.appendChild(rectangle_1_45);
     // Create FRAME
     var frame_1_46 = figma.createFrame();
@@ -186,6 +190,7 @@ let createReadme = (projectName, projectDescription, productPOC, designPOC, engP
     frame_1_46.layoutMode = "VERTICAL";
     frame_1_46.counterAxisSizingMode = "AUTO";
     frame_1_46.itemSpacing = 40;
+    frame_1_46.layoutAlign = "STRETCH";
     frame_1_39.appendChild(frame_1_46);
     // Create FRAME
     var frame_23_221 = figma.createFrame();
@@ -195,6 +200,7 @@ let createReadme = (projectName, projectDescription, productPOC, designPOC, engP
     frame_23_221.backgrounds = [];
     frame_23_221.layoutMode = "VERTICAL";
     frame_23_221.counterAxisSizingMode = "AUTO";
+    frame_23_221.layoutAlign = "STRETCH";
     frame_23_221.itemSpacing = 40;
     frame_1_46.appendChild(frame_23_221);
     // Create FRAME
@@ -204,6 +210,7 @@ let createReadme = (projectName, projectDescription, productPOC, designPOC, engP
     frame_23_222.layoutMode = "VERTICAL";
     frame_23_222.counterAxisSizingMode = "AUTO";
     frame_23_222.itemSpacing = 16;
+    frame_23_222.layoutAlign = "STRETCH";
     frame_23_221.appendChild(frame_23_222);
     // Create TEXT
     var text_23_223 = figma.createText();
@@ -211,6 +218,7 @@ let createReadme = (projectName, projectDescription, productPOC, designPOC, engP
     text_23_223.fills = [{ "type": "SOLID", "visible": true, "opacity": 1, "blendMode": "NORMAL", "color": { "r": 0.22745098173618317, "g": 0.2235294133424759, "b": 0.21960784494876862 } }];
     text_23_223.strokeWeight = 0;
     text_23_223.strokeAlign = "CENTER";
+    text_23_223.layoutAlign = "STRETCH";
     text_23_223.constraints = { "horizontal": "SCALE", "vertical": "CENTER" };
     text_23_223.fontName = {
         family: "Roboto",
@@ -231,6 +239,7 @@ let createReadme = (projectName, projectDescription, productPOC, designPOC, engP
     frame_23_224.backgrounds = [];
     frame_23_224.layoutMode = "VERTICAL";
     frame_23_224.counterAxisSizingMode = "AUTO";
+    frame_23_224.layoutAlign = "STRETCH";
     frame_23_224.itemSpacing = 4;
     frame_23_222.appendChild(frame_23_224);
     // Create TEXT
@@ -240,6 +249,7 @@ let createReadme = (projectName, projectDescription, productPOC, designPOC, engP
     text_23_226.strokeWeight = 0;
     text_23_226.strokeAlign = "CENTER";
     text_23_226.constraints = { "horizontal": "SCALE", "vertical": "CENTER" };
+    text_23_226.layoutAlign = "STRETCH";
     text_23_226.fontName = {
         family: "Roboto",
         style: "Regular"
@@ -256,6 +266,7 @@ let createReadme = (projectName, projectDescription, productPOC, designPOC, engP
     text_23_227.relativeTransform = [[1, 0, 400], [0, 1, 0]];
     text_23_227.x = 400;
     text_23_227.constraints = { "horizontal": "SCALE", "vertical": "CENTER" };
+    text_23_227.layoutAlign = "STRETCH";
     text_23_227.fontName = {
         family: "Roboto",
         style: "Regular"
@@ -275,6 +286,7 @@ let createReadme = (projectName, projectDescription, productPOC, designPOC, engP
     group_23_225.layoutAlign = "INHERIT";
     group_23_225.constrainProportions = false;
     group_23_225.layoutGrow = 0;
+    group_23_225.layoutAlign = "STRETCH";
     group_23_225.expanded = true;
     // Create TEXT
     var text_23_229 = figma.createText();
@@ -285,6 +297,7 @@ let createReadme = (projectName, projectDescription, productPOC, designPOC, engP
     text_23_229.relativeTransform = [[1, 0, 0], [0, 1, 28]];
     text_23_229.y = 28;
     text_23_229.constraints = { "horizontal": "SCALE", "vertical": "CENTER" };
+    text_23_229.layoutAlign = "STRETCH";
     text_23_229.fontName = {
         family: "Roboto",
         style: "Regular"
@@ -302,6 +315,7 @@ let createReadme = (projectName, projectDescription, productPOC, designPOC, engP
     text_23_230.x = 400;
     text_23_230.y = 28;
     text_23_230.constraints = { "horizontal": "SCALE", "vertical": "CENTER" };
+    text_23_230.layoutAlign = "STRETCH";
     text_23_230.fontName = {
         family: "Roboto",
         style: "Regular"
@@ -321,6 +335,7 @@ let createReadme = (projectName, projectDescription, productPOC, designPOC, engP
     group_23_228.layoutAlign = "INHERIT";
     group_23_228.constrainProportions = false;
     group_23_228.layoutGrow = 0;
+    group_23_228.layoutAlign = "STRETCH";
     group_23_228.expanded = true;
     // Create TEXT
     var text_23_232 = figma.createText();
@@ -331,6 +346,7 @@ let createReadme = (projectName, projectDescription, productPOC, designPOC, engP
     text_23_232.relativeTransform = [[1, 0, 0], [0, 1, 56]];
     text_23_232.y = 56;
     text_23_232.constraints = { "horizontal": "SCALE", "vertical": "CENTER" };
+    text_23_232.layoutAlign = "STRETCH";
     text_23_232.fontName = {
         family: "Roboto",
         style: "Regular"
@@ -348,6 +364,7 @@ let createReadme = (projectName, projectDescription, productPOC, designPOC, engP
     text_23_233.x = 400;
     text_23_233.y = 56;
     text_23_233.constraints = { "horizontal": "SCALE", "vertical": "CENTER" };
+    text_23_233.layoutAlign = "STRETCH";
     text_23_233.fontName = {
         family: "Roboto",
         style: "Regular"
@@ -365,6 +382,7 @@ let createReadme = (projectName, projectDescription, productPOC, designPOC, engP
     group_23_231.blendMode = "PASS_THROUGH";
     group_23_231.isMask = false;
     group_23_231.layoutAlign = "INHERIT";
+    group_23_231.layoutAlign = "STRETCH";
     group_23_231.constrainProportions = false;
     group_23_231.layoutGrow = 0;
     group_23_231.expanded = true;
@@ -377,6 +395,7 @@ let createReadme = (projectName, projectDescription, productPOC, designPOC, engP
     frame_23_240.layoutMode = "VERTICAL";
     frame_23_240.counterAxisSizingMode = "AUTO";
     frame_23_240.itemSpacing = 16;
+    frame_23_240.layoutAlign = "STRETCH";
     frame_23_221.appendChild(frame_23_240);
     // Create TEXT
     var text_23_241 = figma.createText();
@@ -385,6 +404,7 @@ let createReadme = (projectName, projectDescription, productPOC, designPOC, engP
     text_23_241.strokeWeight = 0;
     text_23_241.strokeAlign = "CENTER";
     text_23_241.constraints = { "horizontal": "SCALE", "vertical": "CENTER" };
+    text_23_241.layoutAlign = "STRETCH";
     text_23_241.fontName = {
         family: "Roboto",
         style: "Bold"
@@ -404,6 +424,7 @@ let createReadme = (projectName, projectDescription, productPOC, designPOC, engP
     frame_23_242.layoutMode = "VERTICAL";
     frame_23_242.counterAxisSizingMode = "AUTO";
     frame_23_242.itemSpacing = 4;
+    frame_23_242.layoutAlign = "STRETCH";
     frame_23_240.appendChild(frame_23_242);
     // Create TEXT
     var text_23_244 = figma.createText();
@@ -412,6 +433,7 @@ let createReadme = (projectName, projectDescription, productPOC, designPOC, engP
     text_23_244.strokeWeight = 0;
     text_23_244.strokeAlign = "CENTER";
     text_23_244.constraints = { "horizontal": "SCALE", "vertical": "CENTER" };
+    text_23_244.layoutAlign = "STRETCH";
     text_23_244.fontName = {
         family: "Roboto",
         style: "Regular"
@@ -428,6 +450,7 @@ let createReadme = (projectName, projectDescription, productPOC, designPOC, engP
     text_23_245.strokeAlign = "CENTER";
     text_23_245.relativeTransform = [[1, 0, 400], [0, 1, 0]];
     text_23_245.x = 400;
+    text_23_245.layoutAlign = "STRETCH";
     text_23_245.constraints = { "horizontal": "SCALE", "vertical": "CENTER" };
     text_23_245.fontName = {
         family: "Roboto",
@@ -449,6 +472,7 @@ let createReadme = (projectName, projectDescription, productPOC, designPOC, engP
     group_23_243.constrainProportions = false;
     group_23_243.layoutGrow = 0;
     group_23_243.expanded = true;
+    group_23_243.layoutAlign = "STRETCH";
     // Create FRAME
     var frame_23_246 = figma.createFrame();
     frame_23_246.resize(460.0000000000, 100.0000000000);
@@ -458,6 +482,7 @@ let createReadme = (projectName, projectDescription, productPOC, designPOC, engP
     frame_23_246.layoutMode = "VERTICAL";
     frame_23_246.counterAxisSizingMode = "AUTO";
     frame_23_246.itemSpacing = 16;
+    frame_23_246.layoutAlign = "STRETCH";
     frame_23_221.appendChild(frame_23_246);
     // Create TEXT
     var text_23_247 = figma.createText();
@@ -466,6 +491,7 @@ let createReadme = (projectName, projectDescription, productPOC, designPOC, engP
     text_23_247.strokeWeight = 0;
     text_23_247.strokeAlign = "CENTER";
     text_23_247.constraints = { "horizontal": "SCALE", "vertical": "CENTER" };
+    text_23_247.layoutAlign = "STRETCH";
     text_23_247.fontName = {
         family: "Roboto",
         style: "Bold"
@@ -486,6 +512,7 @@ let createReadme = (projectName, projectDescription, productPOC, designPOC, engP
     frame_23_248.layoutMode = "VERTICAL";
     frame_23_248.counterAxisSizingMode = "AUTO";
     frame_23_248.itemSpacing = 4;
+    frame_23_248.layoutAlign = "STRETCH";
     frame_23_246.appendChild(frame_23_248);
     // Create TEXT
     var text_23_250 = figma.createText();
@@ -494,6 +521,7 @@ let createReadme = (projectName, projectDescription, productPOC, designPOC, engP
     text_23_250.strokeWeight = 0;
     text_23_250.strokeAlign = "CENTER";
     text_23_250.constraints = { "horizontal": "SCALE", "vertical": "CENTER" };
+    text_23_250.layoutAlign = "STRETCH";
     text_23_250.fontName = {
         family: "Roboto",
         style: "Regular"
@@ -511,6 +539,7 @@ let createReadme = (projectName, projectDescription, productPOC, designPOC, engP
     text_23_251.relativeTransform = [[1, 0, 400], [0, 1, 0]];
     text_23_251.x = 400;
     text_23_251.constraints = { "horizontal": "SCALE", "vertical": "CENTER" };
+    text_23_251.layoutAlign = "STRETCH";
     text_23_251.fontName = {
         family: "Roboto",
         style: "Regular"
@@ -531,6 +560,7 @@ let createReadme = (projectName, projectDescription, productPOC, designPOC, engP
     group_23_249.constrainProportions = false;
     group_23_249.layoutGrow = 0;
     group_23_249.expanded = true;
+    group_23_249.layoutAlign = "STRETCH";
     // Create RECTANGLE
     var rectangle_1_52 = figma.createRectangle();
     rectangle_1_52.resize(960.0000000000, 2.0000000000);
@@ -539,6 +569,7 @@ let createReadme = (projectName, projectDescription, productPOC, designPOC, engP
     rectangle_1_52.relativeTransform = [[1, 0, 80], [0, 1, 724]];
     rectangle_1_52.x = 80;
     rectangle_1_52.y = 724;
+    rectangle_1_52.layoutAlign = "STRETCH";
     frame_1_39.appendChild(rectangle_1_52);
     // Create FRAME
     var frame_1_59 = figma.createFrame();
@@ -550,6 +581,7 @@ let createReadme = (projectName, projectDescription, productPOC, designPOC, engP
     frame_1_59.layoutMode = "VERTICAL";
     frame_1_59.counterAxisSizingMode = "AUTO";
     frame_1_59.itemSpacing = 40;
+    frame_1_59.layoutAlign = "STRETCH";
     frame_1_39.appendChild(frame_1_59);
     // Create FRAME
     var frame_1_60 = figma.createFrame();
@@ -558,6 +590,7 @@ let createReadme = (projectName, projectDescription, productPOC, designPOC, engP
     frame_1_60.layoutMode = "VERTICAL";
     frame_1_60.counterAxisSizingMode = "AUTO";
     frame_1_60.itemSpacing = 16;
+    frame_1_60.layoutAlign = "STRETCH";
     frame_1_59.appendChild(frame_1_60);
     // Create TEXT
     var text_1_61 = figma.createText();
@@ -566,6 +599,7 @@ let createReadme = (projectName, projectDescription, productPOC, designPOC, engP
     text_1_61.strokeWeight = 0;
     text_1_61.strokeAlign = "CENTER";
     text_1_61.constraints = { "horizontal": "SCALE", "vertical": "CENTER" };
+    text_1_61.layoutAlign = "STRETCH";
     text_1_61.fontName = {
         family: "Roboto",
         style: "Bold"
@@ -585,6 +619,7 @@ let createReadme = (projectName, projectDescription, productPOC, designPOC, engP
     frame_1_62.layoutMode = "VERTICAL";
     frame_1_62.counterAxisSizingMode = "AUTO";
     frame_1_62.itemSpacing = 4;
+    frame_1_62.layoutAlign = "STRETCH";
     frame_1_60.appendChild(frame_1_62);
     // Create TEXT
     var text_1_64 = figma.createText();
@@ -593,6 +628,7 @@ let createReadme = (projectName, projectDescription, productPOC, designPOC, engP
     text_1_64.strokeWeight = 0;
     text_1_64.strokeAlign = "CENTER";
     text_1_64.constraints = { "horizontal": "SCALE", "vertical": "CENTER" };
+    text_1_64.layoutAlign = "STRETCH";
     text_1_64.fontName = {
         family: "Roboto",
         style: "Regular"
@@ -614,6 +650,7 @@ let createReadme = (projectName, projectDescription, productPOC, designPOC, engP
     group_1_63.constrainProportions = false;
     group_1_63.layoutGrow = 0;
     group_1_63.expanded = true;
+    group_1_63.layoutAlign = "STRETCH";
     // Create RECTANGLE
     var rectangle_1_65 = figma.createRectangle();
     rectangle_1_65.resize(960.0000000000, 2.0000000000);
@@ -622,6 +659,7 @@ let createReadme = (projectName, projectDescription, productPOC, designPOC, engP
     rectangle_1_65.relativeTransform = [[1, 0, 80], [0, 1, 958]];
     rectangle_1_65.x = 80;
     rectangle_1_65.y = 958;
+    rectangle_1_65.layoutAlign = "STRETCH";
     frame_1_39.appendChild(rectangle_1_65);
 };
 //create function to easily make pages

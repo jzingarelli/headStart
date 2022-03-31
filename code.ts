@@ -94,11 +94,11 @@ let createCover = (projectName, teamName, color) => {
 
 
 let createReadme = (projectName, projectDescription, productPOC, designPOC, engPOC, slackChannel) => {
-  //create cover page
+  //create ReadMe page
   var readmePage = figma.createPage()
   readmePage.name = "📖 README"
   figma.root.insertChild(1, readmePage)
-  //set thumbnail page to current page
+  //set readMe page to current page
   figma.currentPage = readmePage
   
   // Create README FRAME
@@ -129,6 +129,7 @@ let createReadme = (projectName, projectDescription, productPOC, designPOC, engP
   frame_1_42.layoutMode = "VERTICAL"
   frame_1_42.primaryAxisSizingMode = "AUTO"
   frame_1_42.counterAxisSizingMode = "AUTO"
+  frame_1_42.layoutAlign = "STRETCH"
   frame_1_42.itemSpacing = 22
   frame_1_39.appendChild(frame_1_42)
 
@@ -140,17 +141,16 @@ let createReadme = (projectName, projectDescription, productPOC, designPOC, engP
   text_1_43.strokeWeight = 0
   text_1_43.strokeAlign = "INSIDE"
   text_1_43.constraints = {"horizontal":"SCALE","vertical":"CENTER"}
- 
-  
-    text_1_43.fontName = {
-      family: "Roboto",
-      style: "Bold"
-    }
-    text_1_43.characters = projectName
-    text_1_43.fontSize = 56
-    text_1_43.textAutoResize = "HEIGHT"
-    text_1_43.letterSpacing = {"unit":"PERCENT","value":-5.5}
-    text_1_43.lineHeight = {"unit":"PERCENT","value":114.99999761581421}
+  text_1_43.layoutAlign = "STRETCH"
+  text_1_43.fontName = {
+    family: "Roboto",
+    style: "Bold"
+  }
+  text_1_43.characters = projectName
+  text_1_43.fontSize = 56
+  text_1_43.textAutoResize = "HEIGHT"
+  text_1_43.letterSpacing = {"unit":"PERCENT","value":-5.5}
+  text_1_43.lineHeight = {"unit":"PERCENT","value":114.99999761581421}
 
 
   frame_1_42.appendChild(text_1_43)
@@ -165,19 +165,16 @@ let createReadme = (projectName, projectDescription, productPOC, designPOC, engP
   text_1_44.relativeTransform = [[1,0,0],[0,1,86]]
   text_1_44.y = 86
   text_1_44.constraints = {"horizontal":"SCALE","vertical":"CENTER"}
-
-
-    text_1_44.fontName = {
-      family: "Roboto",
-      style: "Bold"
-    }
-    text_1_44.characters = projectDescription
-    text_1_44.fontSize = 24
-    text_1_44.textAutoResize = "HEIGHT"
-    text_1_44.letterSpacing = {"unit":"PERCENT","value":-3}
-    text_1_44.lineHeight = {"unit":"PERCENT","value":132.00000524520874}
-
-
+  text_1_44.layoutAlign = "STRETCH"
+  text_1_44.fontName = {
+    family: "Roboto",
+    style: "Bold"
+  }
+  text_1_44.characters = projectDescription
+  text_1_44.fontSize = 24
+  text_1_44.textAutoResize = "HEIGHT"
+  text_1_44.letterSpacing = {"unit":"PERCENT","value":-3}
+  text_1_44.lineHeight = {"unit":"PERCENT","value":132.00000524520874}
   frame_1_42.appendChild(text_1_44)
 
   // Create RECTANGLE
@@ -188,6 +185,7 @@ let createReadme = (projectName, projectDescription, productPOC, designPOC, engP
   rectangle_1_45.relativeTransform = [[1,0,80],[0,1,230]]
   rectangle_1_45.x = 80
   rectangle_1_45.y = 230
+  rectangle_1_45.layoutAlign = "STRETCH"
   frame_1_39.appendChild(rectangle_1_45)
 
   // Create FRAME
@@ -202,6 +200,7 @@ let createReadme = (projectName, projectDescription, productPOC, designPOC, engP
   frame_1_46.layoutMode = "VERTICAL"
   frame_1_46.counterAxisSizingMode = "AUTO"
   frame_1_46.itemSpacing = 40
+  frame_1_46.layoutAlign = "STRETCH"
   frame_1_39.appendChild(frame_1_46)
 
   // Create FRAME
@@ -212,6 +211,7 @@ let createReadme = (projectName, projectDescription, productPOC, designPOC, engP
   frame_23_221.backgrounds = []
   frame_23_221.layoutMode = "VERTICAL"
   frame_23_221.counterAxisSizingMode = "AUTO"
+  frame_23_221.layoutAlign = "STRETCH"
   frame_23_221.itemSpacing = 40
   frame_1_46.appendChild(frame_23_221)
 
@@ -222,6 +222,7 @@ let createReadme = (projectName, projectDescription, productPOC, designPOC, engP
   frame_23_222.layoutMode = "VERTICAL"
   frame_23_222.counterAxisSizingMode = "AUTO"
   frame_23_222.itemSpacing = 16
+  frame_23_222.layoutAlign = "STRETCH"
   frame_23_221.appendChild(frame_23_222)
 
   // Create TEXT
@@ -230,19 +231,16 @@ let createReadme = (projectName, projectDescription, productPOC, designPOC, engP
   text_23_223.fills = [{"type":"SOLID","visible":true,"opacity":1,"blendMode":"NORMAL","color":{"r":0.22745098173618317,"g":0.2235294133424759,"b":0.21960784494876862}}]
   text_23_223.strokeWeight = 0
   text_23_223.strokeAlign = "CENTER"
+  text_23_223.layoutAlign = "STRETCH"
   text_23_223.constraints = {"horizontal":"SCALE","vertical":"CENTER"}
-
-  
-    text_23_223.fontName = {
-      family: "Roboto",
-      style: "Bold"
-    }
-    text_23_223.characters = "Project team"
-    text_23_223.fontSize = 24
-    text_23_223.letterSpacing = {"unit":"PERCENT","value":-3}
-    text_23_223.lineHeight = {"unit":"PERCENT","value":132.00000524520874}
-
-  
+  text_23_223.fontName = {
+    family: "Roboto",
+    style: "Bold"
+  }
+  text_23_223.characters = "Project team"
+  text_23_223.fontSize = 24
+  text_23_223.letterSpacing = {"unit":"PERCENT","value":-3}
+  text_23_223.lineHeight = {"unit":"PERCENT","value":132.00000524520874}
   frame_23_222.appendChild(text_23_223)
 
   // Create FRAME
@@ -255,6 +253,7 @@ let createReadme = (projectName, projectDescription, productPOC, designPOC, engP
   frame_23_224.backgrounds = []
   frame_23_224.layoutMode = "VERTICAL"
   frame_23_224.counterAxisSizingMode = "AUTO"
+  frame_23_224.layoutAlign = "STRETCH"
   frame_23_224.itemSpacing = 4
   frame_23_222.appendChild(frame_23_224)
 
@@ -264,17 +263,15 @@ let createReadme = (projectName, projectDescription, productPOC, designPOC, engP
   text_23_226.fills = [{"type":"SOLID","visible":true,"opacity":1,"blendMode":"NORMAL","color":{"r":0.3529411852359772,"g":0.3450980484485626,"b":0.34117648005485535}}]
   text_23_226.strokeWeight = 0
   text_23_226.strokeAlign = "CENTER"
-  text_23_226.constraints = {"horizontal":"SCALE","vertical":"CENTER"}
-
-  
-    text_23_226.fontName = {
-      family: "Roboto",
-      style: "Regular"
-    }
-    text_23_226.characters = "PM"
-    text_23_226.fontSize = 18
-    text_23_226.lineHeight = {"unit":"PERCENT","value":132.00000524520874}
-
+  text_23_226.constraints = {"horizontal":"SCALE","vertical":"CENTER"}\
+  text_23_226.layoutAlign = "STRETCH"
+  text_23_226.fontName = {
+    family: "Roboto",
+    style: "Regular"
+  }
+  text_23_226.characters = "PM"
+  text_23_226.fontSize = 18
+  text_23_226.lineHeight = {"unit":"PERCENT","value":132.00000524520874}
   frame_23_224.appendChild(text_23_226)
 
   // Create TEXT
@@ -285,16 +282,14 @@ let createReadme = (projectName, projectDescription, productPOC, designPOC, engP
   text_23_227.relativeTransform = [[1,0,400],[0,1,0]]
   text_23_227.x = 400
   text_23_227.constraints = {"horizontal":"SCALE","vertical":"CENTER"}
-
-  
-    text_23_227.fontName = {
-      family: "Roboto",
-      style: "Regular"
-    }
-    text_23_227.characters = productPOC
-    text_23_227.fontSize = 18
-    text_23_227.lineHeight = {"unit":"PERCENT","value":132.00000524520874}
-
+  text_23_227.layoutAlign = "STRETCH"
+  text_23_227.fontName = {
+    family: "Roboto",
+    style: "Regular"
+  }
+  text_23_227.characters = productPOC
+  text_23_227.fontSize = 18
+  text_23_227.lineHeight = {"unit":"PERCENT","value":132.00000524520874}
   frame_23_224.appendChild(text_23_227)
 
   // Create GROUP
@@ -308,7 +303,7 @@ let createReadme = (projectName, projectDescription, productPOC, designPOC, engP
   group_23_225.layoutAlign = "INHERIT"
   group_23_225.constrainProportions = false
   group_23_225.layoutGrow = 0
-
+  group_23_225.layoutAlign = "STRETCH"
   group_23_225.expanded = true
 
   // Create TEXT
@@ -320,17 +315,14 @@ let createReadme = (projectName, projectDescription, productPOC, designPOC, engP
   text_23_229.relativeTransform = [[1,0,0],[0,1,28]]
   text_23_229.y = 28
   text_23_229.constraints = {"horizontal":"SCALE","vertical":"CENTER"}
-
-
-  
-    text_23_229.fontName = {
-      family: "Roboto",
-      style: "Regular"
-    }
-    text_23_229.characters = "Design"
-    text_23_229.fontSize = 18
-    text_23_229.lineHeight = {"unit":"PERCENT","value":132.00000524520874}
-
+  text_23_229.layoutAlign = "STRETCH"
+  text_23_229.fontName = {
+    family: "Roboto",
+    style: "Regular"
+  }
+  text_23_229.characters = "Design"
+  text_23_229.fontSize = 18
+  text_23_229.lineHeight = {"unit":"PERCENT","value":132.00000524520874}
   frame_23_224.appendChild(text_23_229)
 
   // Create TEXT
@@ -342,17 +334,14 @@ let createReadme = (projectName, projectDescription, productPOC, designPOC, engP
   text_23_230.x = 400
   text_23_230.y = 28
   text_23_230.constraints = {"horizontal":"SCALE","vertical":"CENTER"}
-
-
-  
-    text_23_230.fontName = {
-      family: "Roboto",
-      style: "Regular"
-    }
-    text_23_230.characters = designPOC
-    text_23_230.fontSize = 18
-    text_23_230.lineHeight = {"unit":"PERCENT","value":132.00000524520874}
-
+  text_23_230.layoutAlign = "STRETCH"
+  text_23_230.fontName = {
+    family: "Roboto",
+    style: "Regular"
+  }
+  text_23_230.characters = designPOC
+  text_23_230.fontSize = 18
+  text_23_230.lineHeight = {"unit":"PERCENT","value":132.00000524520874}
   frame_23_224.appendChild(text_23_230)
 
   // Create GROUP
@@ -366,7 +355,7 @@ let createReadme = (projectName, projectDescription, productPOC, designPOC, engP
   group_23_228.layoutAlign = "INHERIT"
   group_23_228.constrainProportions = false
   group_23_228.layoutGrow = 0
-
+  group_23_228.layoutAlign = "STRETCH"
   group_23_228.expanded = true
 
   // Create TEXT
@@ -378,18 +367,14 @@ let createReadme = (projectName, projectDescription, productPOC, designPOC, engP
   text_23_232.relativeTransform = [[1,0,0],[0,1,56]]
   text_23_232.y = 56
   text_23_232.constraints = {"horizontal":"SCALE","vertical":"CENTER"}
-
-
-  
-    text_23_232.fontName = {
-      family: "Roboto",
-      style: "Regular"
-    }
-    text_23_232.characters = "Engineering"
-    text_23_232.fontSize = 18
-    text_23_232.lineHeight = {"unit":"PERCENT","value":132.00000524520874}
-
-
+  text_23_232.layoutAlign = "STRETCH"  
+  text_23_232.fontName = {
+    family: "Roboto",
+    style: "Regular"
+  }
+  text_23_232.characters = "Engineering"
+  text_23_232.fontSize = 18
+  text_23_232.lineHeight = {"unit":"PERCENT","value":132.00000524520874}
   frame_23_224.appendChild(text_23_232)
 
   // Create TEXT
@@ -401,15 +386,14 @@ let createReadme = (projectName, projectDescription, productPOC, designPOC, engP
   text_23_233.x = 400
   text_23_233.y = 56
   text_23_233.constraints = {"horizontal":"SCALE","vertical":"CENTER"}
-
-  
-    text_23_233.fontName = {
-      family: "Roboto",
-      style: "Regular"
-    }
-    text_23_233.characters = engPOC
-    text_23_233.fontSize = 18
-    text_23_233.lineHeight = {"unit":"PERCENT","value":132.00000524520874}
+  text_23_233.layoutAlign = "STRETCH" 
+  text_23_233.fontName = {
+    family: "Roboto",
+    style: "Regular"
+  }
+  text_23_233.characters = engPOC
+  text_23_233.fontSize = 18
+  text_23_233.lineHeight = {"unit":"PERCENT","value":132.00000524520874}
 
   
   frame_23_224.appendChild(text_23_233)
@@ -423,9 +407,9 @@ let createReadme = (projectName, projectDescription, productPOC, designPOC, engP
   group_23_231.blendMode = "PASS_THROUGH"
   group_23_231.isMask = false
   group_23_231.layoutAlign = "INHERIT"
+  group_23_231.layoutAlign = "STRETCH"
   group_23_231.constrainProportions = false
   group_23_231.layoutGrow = 0
-
   group_23_231.expanded = true
 
   // Create FRAME
@@ -437,6 +421,7 @@ let createReadme = (projectName, projectDescription, productPOC, designPOC, engP
   frame_23_240.layoutMode = "VERTICAL"
   frame_23_240.counterAxisSizingMode = "AUTO"
   frame_23_240.itemSpacing = 16
+  frame_23_240.layoutAlign = "STRETCH"
   frame_23_221.appendChild(frame_23_240)
 
   // Create TEXT
@@ -446,19 +431,15 @@ let createReadme = (projectName, projectDescription, productPOC, designPOC, engP
   text_23_241.strokeWeight = 0
   text_23_241.strokeAlign = "CENTER"
   text_23_241.constraints = {"horizontal":"SCALE","vertical":"CENTER"}
-
-
-  
-    text_23_241.fontName = {
-      family: "Roboto",
-      style: "Bold"
-    }
-    text_23_241.characters = "Slack channel"
-    text_23_241.fontSize = 24
-    text_23_241.letterSpacing = {"unit":"PERCENT","value":-3}
-    text_23_241.lineHeight = {"unit":"PERCENT","value":132.00000524520874}
-
-
+  text_23_241.layoutAlign = "STRETCH"
+  text_23_241.fontName = {
+    family: "Roboto",
+    style: "Bold"
+  }
+  text_23_241.characters = "Slack channel"
+  text_23_241.fontSize = 24
+  text_23_241.letterSpacing = {"unit":"PERCENT","value":-3}
+  text_23_241.lineHeight = {"unit":"PERCENT","value":132.00000524520874}
   frame_23_240.appendChild(text_23_241)
 
   // Create FRAME
@@ -471,6 +452,7 @@ let createReadme = (projectName, projectDescription, productPOC, designPOC, engP
   frame_23_242.layoutMode = "VERTICAL"
   frame_23_242.counterAxisSizingMode = "AUTO"
   frame_23_242.itemSpacing = 4
+  frame_23_242.layoutAlign = "STRETCH"
   frame_23_240.appendChild(frame_23_242)
 
   // Create TEXT
@@ -480,18 +462,14 @@ let createReadme = (projectName, projectDescription, productPOC, designPOC, engP
   text_23_244.strokeWeight = 0
   text_23_244.strokeAlign = "CENTER"
   text_23_244.constraints = {"horizontal":"SCALE","vertical":"CENTER"}
-
-
-  
-    text_23_244.fontName = {
-      family: "Roboto",
-      style: "Regular"
-    }
-    text_23_244.characters = "To find out more:"
-    text_23_244.fontSize = 18
-    text_23_244.lineHeight = {"unit":"PERCENT","value":132.00000524520874}
-
-
+  text_23_244.layoutAlign = "STRETCH"
+  text_23_244.fontName = {
+    family: "Roboto",
+    style: "Regular"
+  }
+  text_23_244.characters = "To find out more:"
+  text_23_244.fontSize = 18
+  text_23_244.lineHeight = {"unit":"PERCENT","value":132.00000524520874}
   frame_23_242.appendChild(text_23_244)
 
   // Create TEXT
@@ -502,19 +480,15 @@ let createReadme = (projectName, projectDescription, productPOC, designPOC, engP
   text_23_245.strokeAlign = "CENTER"
   text_23_245.relativeTransform = [[1,0,400],[0,1,0]]
   text_23_245.x = 400
+  text_23_245.layoutAlign = "STRETCH"
   text_23_245.constraints = {"horizontal":"SCALE","vertical":"CENTER"}
-
-
-  
-    text_23_245.fontName = {
-      family: "Roboto",
-      style: "Regular"
-    }
-    text_23_245.characters = slackChannel
-    text_23_245.fontSize = 18
-    text_23_245.lineHeight = {"unit":"PERCENT","value":132.00000524520874}
-
-
+  text_23_245.fontName = {
+    family: "Roboto",
+    style: "Regular"
+  }
+  text_23_245.characters = slackChannel
+  text_23_245.fontSize = 18
+  text_23_245.lineHeight = {"unit":"PERCENT","value":132.00000524520874}
   frame_23_242.appendChild(text_23_245)
 
   // Create GROUP
@@ -529,6 +503,7 @@ let createReadme = (projectName, projectDescription, productPOC, designPOC, engP
   group_23_243.constrainProportions = false
   group_23_243.layoutGrow = 0
   group_23_243.expanded = true
+  group_23_243.layoutAlign = "STRETCH"
 
   // Create FRAME
   var frame_23_246 = figma.createFrame()
@@ -539,6 +514,7 @@ let createReadme = (projectName, projectDescription, productPOC, designPOC, engP
   frame_23_246.layoutMode = "VERTICAL"
   frame_23_246.counterAxisSizingMode = "AUTO"
   frame_23_246.itemSpacing = 16
+  frame_23_246.layoutAlign = "STRETCH"
   frame_23_221.appendChild(frame_23_246)
 
   // Create TEXT
@@ -548,18 +524,15 @@ let createReadme = (projectName, projectDescription, productPOC, designPOC, engP
   text_23_247.strokeWeight = 0
   text_23_247.strokeAlign = "CENTER"
   text_23_247.constraints = {"horizontal":"SCALE","vertical":"CENTER"}
-
-
-  
-    text_23_247.fontName = {
-      family: "Roboto",
-      style: "Bold"
-    }
-    text_23_247.characters = "Links"
-    text_23_247.fontSize = 24
-    text_23_247.letterSpacing = {"unit":"PERCENT","value":-3}
-    text_23_247.lineHeight = {"unit":"PERCENT","value":132.00000524520874}
-
+  text_23_247.layoutAlign = "STRETCH"
+  text_23_247.fontName = {
+    family: "Roboto",
+    style: "Bold"
+  }
+  text_23_247.characters = "Links"
+  text_23_247.fontSize = 24
+  text_23_247.letterSpacing = {"unit":"PERCENT","value":-3}
+  text_23_247.lineHeight = {"unit":"PERCENT","value":132.00000524520874}
   frame_23_246.appendChild(text_23_247)
 
   // Create FRAME
@@ -573,6 +546,7 @@ let createReadme = (projectName, projectDescription, productPOC, designPOC, engP
   frame_23_248.layoutMode = "VERTICAL"
   frame_23_248.counterAxisSizingMode = "AUTO"
   frame_23_248.itemSpacing = 4
+  frame_23_248.layoutAlign = "STRETCH"
   frame_23_246.appendChild(frame_23_248)
 
   // Create TEXT
@@ -582,18 +556,14 @@ let createReadme = (projectName, projectDescription, productPOC, designPOC, engP
   text_23_250.strokeWeight = 0
   text_23_250.strokeAlign = "CENTER"
   text_23_250.constraints = {"horizontal":"SCALE","vertical":"CENTER"}
-
-
-  
-    text_23_250.fontName = {
-      family: "Roboto",
-      style: "Regular"
-    }
-    text_23_250.characters = "Project brief"
-    text_23_250.fontSize = 18
-    text_23_250.lineHeight = {"unit":"PERCENT","value":132.00000524520874}
-
-
+  text_23_250.layoutAlign = "STRETCH"
+  text_23_250.fontName = {
+    family: "Roboto",
+    style: "Regular"
+  }
+  text_23_250.characters = "Project brief"
+  text_23_250.fontSize = 18
+  text_23_250.lineHeight = {"unit":"PERCENT","value":132.00000524520874}
   frame_23_248.appendChild(text_23_250)
 
   // Create TEXT
@@ -605,18 +575,14 @@ let createReadme = (projectName, projectDescription, productPOC, designPOC, engP
   text_23_251.relativeTransform = [[1,0,400],[0,1,0]]
   text_23_251.x = 400
   text_23_251.constraints = {"horizontal":"SCALE","vertical":"CENTER"}
-
-
-  
-    text_23_251.fontName = {
-      family: "Roboto",
-      style: "Regular"
-    }
-    text_23_251.characters = "https://"
-    text_23_251.fontSize = 18
-    text_23_251.lineHeight = {"unit":"PERCENT","value":132.00000524520874}
-
-
+  text_23_251.layoutAlign = "STRETCH"
+  text_23_251.fontName = {
+    family: "Roboto",
+    style: "Regular"
+  }
+  text_23_251.characters = "https://"
+  text_23_251.fontSize = 18
+  text_23_251.lineHeight = {"unit":"PERCENT","value":132.00000524520874}
   frame_23_248.appendChild(text_23_251)
 
   // Create GROUP
@@ -631,6 +597,7 @@ let createReadme = (projectName, projectDescription, productPOC, designPOC, engP
   group_23_249.constrainProportions = false
   group_23_249.layoutGrow = 0
   group_23_249.expanded = true
+  group_23_249.layoutAlign = "STRETCH"
 
   // Create RECTANGLE
   var rectangle_1_52 = figma.createRectangle()
@@ -640,6 +607,7 @@ let createReadme = (projectName, projectDescription, productPOC, designPOC, engP
   rectangle_1_52.relativeTransform = [[1,0,80],[0,1,724]]
   rectangle_1_52.x = 80
   rectangle_1_52.y = 724
+  rectangle_1_52.layoutAlign = "STRETCH"
   frame_1_39.appendChild(rectangle_1_52)
 
   // Create FRAME
@@ -652,6 +620,7 @@ let createReadme = (projectName, projectDescription, productPOC, designPOC, engP
   frame_1_59.layoutMode = "VERTICAL"
   frame_1_59.counterAxisSizingMode = "AUTO"
   frame_1_59.itemSpacing = 40
+  frame_1_59.layoutAlign = "STRETCH"
   frame_1_39.appendChild(frame_1_59)
 
   // Create FRAME
@@ -661,6 +630,7 @@ let createReadme = (projectName, projectDescription, productPOC, designPOC, engP
   frame_1_60.layoutMode = "VERTICAL"
   frame_1_60.counterAxisSizingMode = "AUTO"
   frame_1_60.itemSpacing = 16
+  frame_1_60.layoutAlign = "STRETCH"
   frame_1_59.appendChild(frame_1_60)
 
   // Create TEXT
@@ -670,19 +640,15 @@ let createReadme = (projectName, projectDescription, productPOC, designPOC, engP
   text_1_61.strokeWeight = 0
   text_1_61.strokeAlign = "CENTER"
   text_1_61.constraints = {"horizontal":"SCALE","vertical":"CENTER"}
-
-
-  
-    text_1_61.fontName = {
-      family: "Roboto",
-      style: "Bold"
-    }
-    text_1_61.characters = "Overview"
-    text_1_61.fontSize = 24
-    text_1_61.letterSpacing = {"unit":"PERCENT","value":-3}
-    text_1_61.lineHeight = {"unit":"PERCENT","value":132.00000524520874}
-
-  
+  text_1_61.layoutAlign = "STRETCH"
+  text_1_61.fontName = {
+    family: "Roboto",
+    style: "Bold"
+  }
+  text_1_61.characters = "Overview"
+  text_1_61.fontSize = 24
+  text_1_61.letterSpacing = {"unit":"PERCENT","value":-3}
+  text_1_61.lineHeight = {"unit":"PERCENT","value":132.00000524520874}
   frame_1_60.appendChild(text_1_61)
 
   // Create FRAME
@@ -695,6 +661,7 @@ let createReadme = (projectName, projectDescription, productPOC, designPOC, engP
   frame_1_62.layoutMode = "VERTICAL"
   frame_1_62.counterAxisSizingMode = "AUTO"
   frame_1_62.itemSpacing = 4
+  frame_1_62.layoutAlign = "STRETCH"
   frame_1_60.appendChild(frame_1_62)
 
   // Create TEXT
@@ -704,19 +671,15 @@ let createReadme = (projectName, projectDescription, productPOC, designPOC, engP
   text_1_64.strokeWeight = 0
   text_1_64.strokeAlign = "CENTER"
   text_1_64.constraints = {"horizontal":"SCALE","vertical":"CENTER"}
-
-
-  
-    text_1_64.fontName = {
-      family: "Roboto",
-      style: "Regular"
-    }
-    text_1_64.characters = "The overview page is another opportunity to provide more context. Help others with finding additional resources and provide information on who they can reach out to with feedback or questions. Feel free to add or remove sections and line items as needed and consider adding separate links to documents like project briefs or research."
-    text_1_64.fontSize = 18
-    text_1_64.textAutoResize = "HEIGHT"
-    text_1_64.lineHeight = {"unit":"PERCENT","value":132.00000524520874}
-
-
+  text_1_64.layoutAlign = "STRETCH"
+  text_1_64.fontName = {
+    family: "Roboto",
+    style: "Regular"
+  }
+  text_1_64.characters = "The overview page is another opportunity to provide more context. Help others with finding additional resources and provide information on who they can reach out to with feedback or questions. Feel free to add or remove sections and line items as needed and consider adding separate links to documents like project briefs or research."
+  text_1_64.fontSize = 18
+  text_1_64.textAutoResize = "HEIGHT"
+  text_1_64.lineHeight = {"unit":"PERCENT","value":132.00000524520874}
   frame_1_62.appendChild(text_1_64)
 
   // Create GROUP
@@ -731,6 +694,7 @@ let createReadme = (projectName, projectDescription, productPOC, designPOC, engP
   group_1_63.constrainProportions = false
   group_1_63.layoutGrow = 0
   group_1_63.expanded = true
+  group_1_63.layoutAlign = "STRETCH"
 
   // Create RECTANGLE
   var rectangle_1_65 = figma.createRectangle()
@@ -740,6 +704,7 @@ let createReadme = (projectName, projectDescription, productPOC, designPOC, engP
   rectangle_1_65.relativeTransform = [[1,0,80],[0,1,958]]
   rectangle_1_65.x = 80
   rectangle_1_65.y = 958
+  rectangle_1_65.layoutAlign = "STRETCH"
   frame_1_39.appendChild(rectangle_1_65)
 
   
