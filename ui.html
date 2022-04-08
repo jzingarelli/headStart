@@ -73,6 +73,30 @@
 
     <button id="createProject">Create Project</button>
   </div>
+  <!-- create form to hold checkboxes for specific pages -->
+  <form id="pagesToCreate" onchange="">
+    <!-- create INDIVIDUAL checkboxes -->
+    <input type="checkbox" id="engHandoff" name="engHandoff" value="engHandoff">
+    <label for="engHandoff"> ⚒️ Eng Handoff</label><br>
+
+    <input type="checkbox" id="userTesting" name="userTesting" value="userTesting">
+    <label for="userTesting"> 🔬 User Testing</label><br>
+    
+    <input type="checkbox" id="explore" name="explore" value="explore">
+    <label for="explore"> 🔮 Explore </label><br>
+
+    <input type="checkbox" id="think" name="think" value="think">
+    <label for="think"> 🤔 Think </label><br>
+
+    <input type="checkbox" id="archive" name="archive" value="archive">
+    <label for="archive"> 📦 Archive </label><br>
+
+    <input type="checkbox" id="localComponents" name="localComponents" value="localComponents">
+    <label for="localComponents"> Local Components </label><br>
+
+
+  
+  </form>
 </div>
 
 <style>
@@ -340,6 +364,31 @@
 
     rgbColorValues = hexToRGB(hexColor)
 
+     //Create an Array.
+    var selectedPages = []
+
+    function GetSelected() {
+       
+         //Reference the Table.
+        var pagesToCreate = document.getElementById("pagesToCreate");
+ 
+        //Reference all the CheckBoxes in Table.
+        var chks = pagesToCreate.getElementsByTagName("INPUT");
+
+        // Loop and push the checked CheckBox value in Array.
+        for (var i = 0; i < chks.length; i++) {
+            if (chks[i].checked) {
+                selectedPages.push(chks[i].value);
+            }
+        }
+        
+        
+    };
+
+    GetSelected();
+    
+    console.log(selectedPages)
+    
     
 
     parent.postMessage({ pluginMessage: { 
@@ -351,7 +400,8 @@
       engPOC: engPOC,
       teamName: teamName, 
       slackChannel: slackChannel, 
-      color: rgbColorValues
+      color: rgbColorValues,
+      pagesToCreate: selectedPages
     }}, '*')
 
   }

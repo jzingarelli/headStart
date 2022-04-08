@@ -32,19 +32,20 @@ let createCover = (projectName, teamName, color) => {
   coverFrame.itemSpacing = 189
   figma.currentPage.appendChild(coverFrame)
 
-  var frame_7_60 = figma.createFrame()
-  frame_7_60.resize(540.0000000000, 168.0000000000)
-  frame_7_60.name = "Frame 1"
-  frame_7_60.relativeTransform = [[1,0,40],[0,1,40]]
-  frame_7_60.x = 40
-  frame_7_60.y = 40
-  frame_7_60.fills = []
-  frame_7_60.backgrounds = []
-  frame_7_60.clipsContent = false
-  frame_7_60.layoutMode = "VERTICAL"
-  frame_7_60.counterAxisSizingMode = "AUTO"
-  frame_7_60.itemSpacing = 8
-  coverFrame.appendChild(frame_7_60)
+  var coverPageFrame = figma.createFrame()
+  coverPageFrame.resize(540.0000000000, 168.0000000000)
+  coverPageFrame.name = "Frame 1"
+  coverPageFrame.relativeTransform = [[1,0,40],[0,1,40]]
+  coverPageFrame.x = 40
+  coverPageFrame.y = 40
+  coverPageFrame.fills = []
+  coverPageFrame.backgrounds = []
+  coverPageFrame.clipsContent = false
+  coverPageFrame.layoutMode = "VERTICAL"
+  coverPageFrame.counterAxisSizingMode = "AUTO"
+  coverPageFrame.itemSpacing = 8
+
+  coverFrame.appendChild(coverPageFrame)
 
   // Create Project Name
   var projectNameText = figma.createText()
@@ -66,7 +67,6 @@ let createCover = (projectName, teamName, color) => {
   projectNameText.letterSpacing = {"unit":"PERCENT","value":-5.5}
   projectNameText.lineHeight = {"unit":"PERCENT","value":114.99999761581421}
 
-  frame_7_60.appendChild(projectNameText)
 
   
 
@@ -89,7 +89,10 @@ let createCover = (projectName, teamName, color) => {
   teamNameText.fontSize = 24
   teamNameText.letterSpacing = {"unit":"PERCENT","value":-3}
   teamNameText.lineHeight = {"unit":"PERCENT","value":132.00000524520874}
-  frame_7_60.appendChild(teamNameText);
+
+  //add elemtents to coverPageFrame
+  coverPageFrame.appendChild(projectNameText)
+  coverPageFrame.appendChild(teamNameText);
 }
 
 
@@ -753,18 +756,45 @@ var createLocalComponents = () => {
 }
 
 
+
 figma.ui.onmessage = (event) => {
   if (event.type === "createProject") {
     loadRoboto().then(() => {
-      console.log("roboto has loaded")
       createCover(event.projectName, event.teamName, event.color);
       createReadme(event.projectName, event.projectDescription, event.productPOC, event.designPOC, event.engPOC, event.slackChannel);
-      createEngHandoff();
-      createUserTesting();
-      createExplore();
-      createThink();
-      createArchive();
-      createLocalComponents();
+      //create certain pages
+      let pagesToCreate = event.pagesToCreate
+      //create eng handoff
+      if (pagesToCreate.includes("engHandoff")) {
+        console.log("create eng hand off page")
+        createEngHandoff();
+      }
+      //create user testing
+      if (pagesToCreate.includes("userTesting")) {
+        console.log("create user testing page")
+        createUserTesting();
+      }
+      //create explore
+      if (pagesToCreate.includes("explore")) {
+        console.log("create explore page")
+        createExplore();
+      }
+      //create think
+      if (pagesToCreate.includes("think")) {
+        console.log("create thinkn page")
+        createThink();
+      }
+      //create archive
+      if (pagesToCreate.includes("archive")) {
+        console.log("create archive page")
+        createArchive();
+      }
+      //create local components
+      if (pagesToCreate.includes("localComponents")) {
+        console.log("create local components page")
+        createLocalComponents();
+      }
+
       figma.closePlugin();
     })
   }
