@@ -15,6 +15,7 @@ function loadRoboto() {
         yield Promise.all([
             figma.loadFontAsync({ family: "Roboto", style: "Regular" }),
             figma.loadFontAsync({ family: "Roboto", style: "Bold" }),
+            figma.loadFontAsync({ family: "Roboto", style: "ExtraBold" }),
         ]);
     });
 }
@@ -88,9 +89,274 @@ let createCover = (projectName, teamName, color) => {
     teamNameText.fontSize = 24;
     teamNameText.letterSpacing = { "unit": "PERCENT", "value": -3 };
     teamNameText.lineHeight = { "unit": "PERCENT", "value": 132.00000524520874 };
+    //CREATE STATUS COMPONENT
+    var inProgress = figma.createComponent();
+    inProgress.resize(177.0000000000, 51.0000000000);
+    inProgress.primaryAxisSizingMode = "AUTO";
+    inProgress.counterAxisSizingMode = "AUTO";
+    inProgress.name = "STATUS=IN PROGRESS";
+    inProgress.effects = [{ "type": "DROP_SHADOW", "color": { "r": 0, "g": 0, "b": 0, "a": 0.10000000149011612 }, "offset": { "x": 0, "y": 6 }, "radius": 10, "spread": 0, "visible": true, "blendMode": "NORMAL", "showShadowBehindNode": false }];
+    inProgress.relativeTransform = [[1, 0, 20], [0, 1, 20]];
+    inProgress.x = 20;
+    inProgress.y = 20;
+    inProgress.fills = [{ "type": "SOLID", "visible": true, "opacity": 1, "blendMode": "NORMAL", "color": { "r": 1, "g": 0.6597222685813904, "b": 0.125 } }];
+    inProgress.cornerRadius = 40;
+    inProgress.paddingLeft = 24;
+    inProgress.paddingRight = 24;
+    inProgress.paddingTop = 16;
+    inProgress.paddingBottom = 16;
+    inProgress.backgrounds = [{ "type": "SOLID", "visible": true, "opacity": 1, "blendMode": "NORMAL", "color": { "r": 1, "g": 0.6597222685813904, "b": 0.125 } }];
+    inProgress.layoutMode = "HORIZONTAL";
+    inProgress.counterAxisSizingMode = "AUTO";
+    inProgress.description = "";
+    inProgress.documentationLinks = [];
+    // Create TEXT
+    var inProgressText = figma.createText();
+    inProgressText.resize(129.0000000000, 19.0000000000);
+    inProgressText.name = "In Progress";
+    inProgressText.fills = [{ "type": "SOLID", "visible": true, "opacity": 1, "blendMode": "NORMAL", "color": { "r": 1, "g": 1, "b": 1 } }];
+    inProgressText.relativeTransform = [[1, 0, 24], [0, 1, 16]];
+    inProgressText.x = 24;
+    inProgressText.y = 16;
+    inProgressText.hyperlink = null;
+    inProgressText.fontName = {
+        family: "Roboto",
+        style: "ExtraBold"
+    };
+    inProgressText.characters = "✍️  In Progress";
+    inProgressText.fontSize = 16;
+    inProgressText.textCase = "UPPER";
+    inProgressText.letterSpacing = { "unit": "PERCENT", "value": 1 };
+    inProgressText.fontName = { "family": "Roboto", "style": "ExtraBold" };
+    inProgressText.textAlignHorizontal = "CENTER";
+    inProgressText.textAlignVertical = "BOTTOM";
+    inProgressText.textAutoResize = "WIDTH_AND_HEIGHT";
+    inProgress.appendChild(inProgressText);
+    // Create COMPONENT
+    var complete = figma.createComponent();
+    complete.resize(157.0000000000, 51.0000000000);
+    complete.primaryAxisSizingMode = "AUTO";
+    complete.counterAxisSizingMode = "AUTO";
+    complete.name = "STATUS=COMPLETE";
+    complete.effects = [{ "type": "DROP_SHADOW", "color": { "r": 0, "g": 0, "b": 0, "a": 0.10000000149011612 }, "offset": { "x": 0, "y": 6 }, "radius": 10, "spread": 0, "visible": true, "blendMode": "NORMAL", "showShadowBehindNode": false }];
+    complete.relativeTransform = [[1, 0, 20], [0, 1, 91]];
+    complete.x = 20;
+    complete.y = 91;
+    complete.fills = [{ "type": "SOLID", "visible": true, "opacity": 1, "blendMode": "NORMAL", "color": { "r": 0.21156379580497742, "g": 0.8083333373069763, "b": 0.10777777433395386 } }];
+    complete.cornerRadius = 40;
+    complete.paddingLeft = 24;
+    complete.paddingRight = 24;
+    complete.paddingTop = 16;
+    complete.paddingBottom = 16;
+    complete.backgrounds = [{ "type": "SOLID", "visible": true, "opacity": 1, "blendMode": "NORMAL", "color": { "r": 0.21156379580497742, "g": 0.8083333373069763, "b": 0.10777777433395386 } }];
+    complete.layoutMode = "HORIZONTAL";
+    complete.counterAxisSizingMode = "AUTO";
+    complete.description = "";
+    complete.documentationLinks = [];
+    // Create TEXT
+    var completeText = figma.createText();
+    completeText.resize(109.0000000000, 19.0000000000);
+    completeText.name = "In Progress";
+    completeText.fills = [{ "type": "SOLID", "visible": true, "opacity": 1, "blendMode": "NORMAL", "color": { "r": 1, "g": 1, "b": 1 } }];
+    completeText.relativeTransform = [[1, 0, 24], [0, 1, 16]];
+    completeText.x = 24;
+    completeText.y = 16;
+    completeText.hyperlink = null;
+    completeText.fontName = {
+        family: "Roboto",
+        style: "ExtraBold"
+    };
+    completeText.characters = "✅  COMPLETE";
+    completeText.fontSize = 16;
+    completeText.textCase = "UPPER";
+    completeText.letterSpacing = { "unit": "PERCENT", "value": 1 };
+    completeText.fontName = { "family": "Roboto", "style": "ExtraBold" };
+    completeText.textAlignHorizontal = "CENTER";
+    completeText.textAlignVertical = "BOTTOM";
+    completeText.textAutoResize = "WIDTH_AND_HEIGHT";
+    complete.appendChild(completeText);
+    // Create COMPONENT
+    var readyForEng = figma.createComponent();
+    readyForEng.resize(194.0000000000, 51.0000000000);
+    readyForEng.primaryAxisSizingMode = "AUTO";
+    readyForEng.counterAxisSizingMode = "AUTO";
+    readyForEng.name = "STATUS=READY FOR ENG";
+    readyForEng.effects = [{ "type": "DROP_SHADOW", "color": { "r": 0, "g": 0, "b": 0, "a": 0.10000000149011612 }, "offset": { "x": 0, "y": 6 }, "radius": 10, "spread": 0, "visible": true, "blendMode": "NORMAL", "showShadowBehindNode": false }];
+    readyForEng.relativeTransform = [[1, 0, 20], [0, 1, 162]];
+    readyForEng.x = 20;
+    readyForEng.y = 162;
+    readyForEng.fills = [{ "type": "SOLID", "visible": true, "opacity": 1, "blendMode": "NORMAL", "color": { "r": 0, "g": 0, "b": 0 } }];
+    readyForEng.cornerRadius = 40;
+    readyForEng.paddingLeft = 24;
+    readyForEng.paddingRight = 24;
+    readyForEng.paddingTop = 16;
+    readyForEng.paddingBottom = 16;
+    readyForEng.backgrounds = [{ "type": "SOLID", "visible": true, "opacity": 1, "blendMode": "NORMAL", "color": { "r": 0, "g": 0, "b": 0 } }];
+    readyForEng.layoutMode = "HORIZONTAL";
+    readyForEng.counterAxisSizingMode = "AUTO";
+    readyForEng.description = "";
+    readyForEng.documentationLinks = [];
+    // Create TEXT
+    var readyForEngText = figma.createText();
+    readyForEngText.resize(146.0000000000, 19.0000000000);
+    readyForEngText.name = "In Progress";
+    readyForEngText.fills = [{ "type": "SOLID", "visible": true, "opacity": 1, "blendMode": "NORMAL", "color": { "r": 1, "g": 1, "b": 1 } }];
+    readyForEngText.relativeTransform = [[1, 0, 24], [0, 1, 16]];
+    readyForEngText.x = 24;
+    readyForEngText.y = 16;
+    readyForEngText.hyperlink = null;
+    readyForEngText.fontName = {
+        family: "Roboto",
+        style: "ExtraBold"
+    };
+    readyForEngText.characters = "🛠  Ready for eng";
+    readyForEngText.fontSize = 16;
+    readyForEngText.textCase = "UPPER";
+    readyForEngText.letterSpacing = { "unit": "PERCENT", "value": 1 };
+    readyForEngText.fontName = { "family": "Roboto", "style": "ExtraBold" };
+    readyForEngText.textAlignHorizontal = "CENTER";
+    readyForEngText.textAlignVertical = "BOTTOM";
+    readyForEngText.textAutoResize = "WIDTH_AND_HEIGHT";
+    readyForEng.appendChild(readyForEngText);
+    // Create COMPONENT
+    var paused = figma.createComponent();
+    paused.resize(133.0000000000, 51.0000000000);
+    paused.primaryAxisSizingMode = "AUTO";
+    paused.counterAxisSizingMode = "AUTO";
+    paused.name = "STATUS=PAUSED";
+    paused.effects = [{ "type": "DROP_SHADOW", "color": { "r": 0, "g": 0, "b": 0, "a": 0.10000000149011612 }, "offset": { "x": 0, "y": 6 }, "radius": 10, "spread": 0, "visible": true, "blendMode": "NORMAL", "showShadowBehindNode": false }];
+    paused.relativeTransform = [[1, 0, 20], [0, 1, 233]];
+    paused.x = 20;
+    paused.y = 233;
+    paused.fills = [{ "type": "SOLID", "visible": true, "opacity": 1, "blendMode": "NORMAL", "color": { "r": 0.28333336114883423, "g": 0.6475410461425781, "b": 1 } }];
+    paused.cornerRadius = 40;
+    paused.paddingLeft = 24;
+    paused.paddingRight = 24;
+    paused.paddingTop = 16;
+    paused.paddingBottom = 16;
+    paused.backgrounds = [{ "type": "SOLID", "visible": true, "opacity": 1, "blendMode": "NORMAL", "color": { "r": 0.28333336114883423, "g": 0.6475410461425781, "b": 1 } }];
+    paused.layoutMode = "HORIZONTAL";
+    paused.counterAxisSizingMode = "AUTO";
+    paused.description = "";
+    paused.documentationLinks = [];
+    // Create TEXT
+    var pausedText = figma.createText();
+    pausedText.resize(85.0000000000, 19.0000000000);
+    pausedText.name = "In Progress";
+    pausedText.fills = [{ "type": "SOLID", "visible": true, "opacity": 1, "blendMode": "NORMAL", "color": { "r": 1, "g": 1, "b": 1 } }];
+    pausedText.relativeTransform = [[1, 0, 24], [0, 1, 16]];
+    pausedText.x = 24;
+    pausedText.y = 16;
+    pausedText.hyperlink = null;
+    pausedText.fontName = {
+        family: "Roboto",
+        style: "ExtraBold"
+    };
+    pausedText.characters = "⏸  PAUSED";
+    pausedText.fontSize = 16;
+    pausedText.textCase = "UPPER";
+    pausedText.letterSpacing = { "unit": "PERCENT", "value": 1 };
+    pausedText.fontName = { "family": "Roboto", "style": "ExtraBold" };
+    pausedText.textAlignHorizontal = "CENTER";
+    pausedText.textAlignVertical = "BOTTOM";
+    pausedText.textAutoResize = "WIDTH_AND_HEIGHT";
+    paused.appendChild(pausedText);
+    // Create COMPONENT
+    var inReview = figma.createComponent();
+    inReview.resize(152.0000000000, 51.0000000000);
+    inReview.primaryAxisSizingMode = "AUTO";
+    inReview.counterAxisSizingMode = "AUTO";
+    inReview.name = "STATUS=IN REVIEW";
+    inReview.effects = [{ "type": "DROP_SHADOW", "color": { "r": 0, "g": 0, "b": 0, "a": 0.10000000149011612 }, "offset": { "x": 0, "y": 6 }, "radius": 10, "spread": 0, "visible": true, "blendMode": "NORMAL", "showShadowBehindNode": false }];
+    inReview.relativeTransform = [[1, 0, 20], [0, 1, 304]];
+    inReview.x = 20;
+    inReview.y = 304;
+    inReview.fills = [{ "type": "SOLID", "visible": true, "opacity": 1, "blendMode": "NORMAL", "color": { "r": 0.686274528503418, "g": 0.32156863808631897, "b": 0.8705882430076599 } }];
+    inReview.cornerRadius = 40;
+    inReview.paddingLeft = 24;
+    inReview.paddingRight = 24;
+    inReview.paddingTop = 16;
+    inReview.paddingBottom = 16;
+    inReview.backgrounds = [{ "type": "SOLID", "visible": true, "opacity": 1, "blendMode": "NORMAL", "color": { "r": 0.686274528503418, "g": 0.32156863808631897, "b": 0.8705882430076599 } }];
+    inReview.layoutMode = "HORIZONTAL";
+    inReview.counterAxisSizingMode = "AUTO";
+    inReview.description = "";
+    inReview.documentationLinks = [];
+    // Create TEXT
+    var inReviewText = figma.createText();
+    inReviewText.resize(104.0000000000, 19.0000000000);
+    inReviewText.name = "In Progress";
+    inReviewText.fills = [{ "type": "SOLID", "visible": true, "opacity": 1, "blendMode": "NORMAL", "color": { "r": 1, "g": 1, "b": 1 } }];
+    inReviewText.relativeTransform = [[1, 0, 24], [0, 1, 16]];
+    inReviewText.x = 24;
+    inReviewText.y = 16;
+    inReviewText.hyperlink = null;
+    inReviewText.fontName = {
+        family: "Roboto",
+        style: "ExtraBold"
+    };
+    inReviewText.characters = "👀  IN REVIEW";
+    inReviewText.fontSize = 16;
+    inReviewText.textCase = "UPPER";
+    inReviewText.letterSpacing = { "unit": "PERCENT", "value": 1 };
+    inReviewText.fontName = { "family": "Roboto", "style": "ExtraBold" };
+    inReviewText.textAlignHorizontal = "CENTER";
+    inReviewText.textAlignVertical = "BOTTOM";
+    inReviewText.textAutoResize = "WIDTH_AND_HEIGHT";
+    inReview.appendChild(inReviewText);
+    // Create COMPONENT_SET
+    var fileStatusComponentSet = figma.combineAsVariants([inProgress, complete, readyForEng, paused, inReview], figma.currentPage);
+    fileStatusComponentSet.resize(234.0000000000, 375.0000000000);
+    fileStatusComponentSet.primaryAxisSizingMode = "AUTO";
+    fileStatusComponentSet.counterAxisSizingMode = "AUTO";
+    fileStatusComponentSet.name = "FILE-STATUS";
+    fileStatusComponentSet.visible = true;
+    fileStatusComponentSet.locked = false;
+    fileStatusComponentSet.opacity = 1;
+    fileStatusComponentSet.blendMode = "PASS_THROUGH";
+    fileStatusComponentSet.isMask = false;
+    fileStatusComponentSet.effects = [];
+    fileStatusComponentSet.relativeTransform = [[1, 0, 768], [0, 1, 0]];
+    fileStatusComponentSet.x = 768;
+    fileStatusComponentSet.y = 0;
+    fileStatusComponentSet.rotation = 0;
+    fileStatusComponentSet.layoutAlign = "INHERIT";
+    fileStatusComponentSet.constrainProportions = false;
+    fileStatusComponentSet.layoutGrow = 0;
+    fileStatusComponentSet.fills = [];
+    fileStatusComponentSet.strokes = [];
+    fileStatusComponentSet.strokeWeight = 1;
+    fileStatusComponentSet.strokeAlign = "INSIDE";
+    fileStatusComponentSet.strokeJoin = "MITER";
+    fileStatusComponentSet.dashPattern = [10, 5];
+    fileStatusComponentSet.strokeCap = "NONE";
+    fileStatusComponentSet.strokeMiterLimit = 4;
+    fileStatusComponentSet.cornerRadius = 5;
+    fileStatusComponentSet.cornerSmoothing = 0;
+    fileStatusComponentSet.paddingLeft = 20;
+    fileStatusComponentSet.paddingRight = 20;
+    fileStatusComponentSet.paddingTop = 20;
+    fileStatusComponentSet.paddingBottom = 20;
+    fileStatusComponentSet.primaryAxisAlignItems = "MIN";
+    fileStatusComponentSet.counterAxisAlignItems = "MIN";
+    fileStatusComponentSet.primaryAxisSizingMode = "AUTO";
+    fileStatusComponentSet.layoutGrids = [];
+    fileStatusComponentSet.backgrounds = [];
+    fileStatusComponentSet.clipsContent = true;
+    fileStatusComponentSet.guides = [];
+    fileStatusComponentSet.expanded = true;
+    fileStatusComponentSet.constraints = { "horizontal": "MIN", "vertical": "MIN" };
+    fileStatusComponentSet.layoutMode = "VERTICAL";
+    fileStatusComponentSet.counterAxisSizingMode = "AUTO";
+    fileStatusComponentSet.itemSpacing = 20;
+    fileStatusComponentSet.description = "";
+    fileStatusComponentSet.documentationLinks = [];
+    //create instance of status component for cover
+    var coverFileStatusInstance = inProgress.createInstance();
     //add elemtents to coverPageFrame
     coverPageFrame.appendChild(projectNameText);
     coverPageFrame.appendChild(teamNameText);
+    coverPageFrame.appendChild(coverFileStatusInstance);
 };
 let createReadme = (projectName, projectDescription, productPOC, designPOC, engPOC, slackChannel) => {
     //create ReadMe page
