@@ -140,12 +140,15 @@ let createCover = (projectName, teamName, color, textColor) => {
     var coverFrame = figma.createFrame();
     coverFrame.resize(620.0000000000, 372.0000000000);
     coverFrame.name = "Cover";
+    coverFrame.counterAxisSizingMode = "AUTO";
     coverFrame.fills = [{ "type": "SOLID", "visible": true, "opacity": 1, "blendMode": "NORMAL", "color": { "r": color[0], "g": color[1], "b": color[2] } }];
     coverFrame.paddingLeft = 40;
     coverFrame.paddingRight = 40;
     coverFrame.paddingTop = 40;
     coverFrame.paddingBottom = 40;
-    coverFrame.itemSpacing = 189;
+    coverFrame.layoutMode = "VERTICAL";
+    coverFrame.primaryAxisSizingMode = "FIXED";
+    coverFrame.counterAxisSizingMode = "AUTO";
     figma.currentPage.appendChild(coverFrame);
     var coverPageFrame = figma.createFrame();
     coverPageFrame.resize(540.0000000000, 168.0000000000);
@@ -155,6 +158,7 @@ let createCover = (projectName, teamName, color, textColor) => {
     coverPageFrame.y = 40;
     coverPageFrame.fills = [];
     coverPageFrame.backgrounds = [];
+    coverPageFrame.layoutGrow = 1;
     coverPageFrame.clipsContent = false;
     coverPageFrame.layoutMode = "VERTICAL";
     coverPageFrame.counterAxisSizingMode = "AUTO";
@@ -164,6 +168,7 @@ let createCover = (projectName, teamName, color, textColor) => {
     var projectNameText = figma.createText();
     projectNameText.resize(540.0000000000, 65.0000000000);
     projectNameText.name = "Project name";
+    projectNameText.layoutGrow = 1;
     projectNameText.fills = [{ "type": "SOLID", "visible": true, "opacity": 1, "blendMode": "NORMAL", "color": { "r": textColor[0], "g": textColor[1], "b": textColor[2] } }];
     projectNameText.strokeWeight = 0;
     projectNameText.strokeAlign = "INSIDE";
@@ -179,6 +184,7 @@ let createCover = (projectName, teamName, color, textColor) => {
     projectNameText.fontSize = 56;
     projectNameText.letterSpacing = { "unit": "PERCENT", "value": -5.5 };
     projectNameText.lineHeight = { "unit": "PERCENT", "value": 114.99999761581421 };
+    projectNameText.textAlignVertical = "BOTTOM";
     // Create Team Name
     var teamNameText = figma.createText();
     teamNameText.resize(540.0000000000, 32.0000000000);
@@ -462,9 +468,9 @@ let createCover = (projectName, teamName, color, textColor) => {
     //create instance of status component for cover
     var coverFileStatusInstance = inProgress.createInstance();
     //add elemtents to coverPageFrame
+    coverPageFrame.appendChild(coverFileStatusInstance);
     coverPageFrame.appendChild(projectNameText);
     coverPageFrame.appendChild(teamNameText);
-    coverPageFrame.appendChild(coverFileStatusInstance);
 };
 let createReadme = (projectName, projectDescription, productPOC, designPOC, engPOC, slackChannel) => {
     //create ReadMe page
