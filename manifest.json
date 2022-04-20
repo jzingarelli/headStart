@@ -16,6 +16,15 @@
         {"name": "⏸  Paused", "command": "setFileStatusToPaused"},
         {"name": "👀  In Review", "command": "setFileStatusToInReview"}
       ]
+     },
+     {"name": "Add Page Sections",
+      "menu": [
+        {"name": "⚒️ Eng Handoff", "command": "createPagesEngHandoff"},
+        {"name": "🔬 User Testing", "command": "createPagesUserTesting"},
+        {"name": "🔮 Explore", "command": "createPagesExplore"},
+        {"name": "🤔 Think", "command": "createPagesThink"},
+        {"name": "📦 Archive", "command": "createPagesArchive"}
+      ]
      }
   ]
 }

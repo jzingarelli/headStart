@@ -1038,7 +1038,7 @@ let createReadme = (projectName, projectDescription, productPOC, designPOC, engP
     rectangle_1_65.layoutAlign = "STRETCH";
     frame_1_39.appendChild(rectangle_1_65);
 };
-//create function to easily make pages
+//create functions to easily make pages
 //places at bottom of page list
 var createPage = (nameString) => {
     let page = figma.createPage();
@@ -1073,6 +1073,36 @@ var createLocalComponents = () => {
     createPage("––––––––––––––––––––––––––––––––");
     createPage("LOCAL COMPONENTS");
 };
+//create pages for eng handoff
+if (figma.command === "createPagesEngHandoff") {
+    createEngHandoff();
+    figma.notify("Added pages for ENG HANDOFF");
+    figma.closePlugin();
+}
+//create pages for User Testing
+if (figma.command === "createPagesUserTesting") {
+    createUserTesting();
+    figma.notify("Added pages for USER TESTING");
+    figma.closePlugin();
+}
+//create pages for Explore
+if (figma.command === "createPagesExplore") {
+    createExplore();
+    figma.notify("Added pages for EXPLORE");
+    figma.closePlugin();
+}
+//create pages for Think
+if (figma.command === "createPagesThink") {
+    createThink();
+    figma.notify("Added pages for THINK");
+    figma.closePlugin();
+}
+//create pages for Think
+if (figma.command === "createPagesArchive") {
+    createArchive();
+    figma.notify("Added pages for ARCHIVE");
+    figma.closePlugin();
+}
 figma.ui.onmessage = (event) => {
     if (event.type === "createProject") {
         loadRoboto().then(() => {
