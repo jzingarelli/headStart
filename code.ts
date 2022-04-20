@@ -121,7 +121,7 @@ if (figma.command === "setFileStatusToPaused") {
 
 
 
-//load roboto
+//load roboto function
 async function loadRoboto() {
 	await Promise.all([
 		figma.loadFontAsync({family: "Roboto", style: "Regular"}),
@@ -221,13 +221,12 @@ let createCover = (projectName, teamName, color, textColor) => {
   inProgress.relativeTransform = [[1,0,20],[0,1,20]]
   inProgress.x = 20
   inProgress.y = 20
-  inProgress.fills = [{"type":"SOLID","visible":true,"opacity":1,"blendMode":"NORMAL","color":{"r":1,"g":0.6597222685813904,"b":0.125}}]
   inProgress.cornerRadius = 40
   inProgress.paddingLeft = 24
   inProgress.paddingRight = 24
   inProgress.paddingTop = 16
   inProgress.paddingBottom = 16
-  inProgress.backgrounds = [{"type":"SOLID","visible":true,"opacity":1,"blendMode":"NORMAL","color":{"r":1,"g":0.6597222685813904,"b":0.125}}]
+  inProgress.backgrounds = [{"type":"SOLID","visible":true,"opacity":1,"blendMode":"NORMAL","color":{"r":1,"g":1,"b":1}}]
   inProgress.layoutMode = "HORIZONTAL"
   inProgress.counterAxisSizingMode = "AUTO"
   inProgress.description = ""
@@ -237,7 +236,7 @@ let createCover = (projectName, teamName, color, textColor) => {
   var inProgressText = figma.createText()
   inProgressText.resize(129.0000000000, 19.0000000000)
   inProgressText.name = "In Progress"
-  inProgressText.fills = [{"type":"SOLID","visible":true,"opacity":1,"blendMode":"NORMAL","color":{"r":1,"g":1,"b":1}}]
+  inProgressText.fills = [{"type":"SOLID","visible":true,"opacity":1,"blendMode":"NORMAL","color":{"r":0,"g":0,"b":0}}]
   inProgressText.relativeTransform = [[1,0,24],[0,1,16]]
   inProgressText.x = 24
   inProgressText.y = 16
@@ -272,7 +271,7 @@ let createCover = (projectName, teamName, color, textColor) => {
   complete.paddingRight = 24
   complete.paddingTop = 16
   complete.paddingBottom = 16
-  complete.backgrounds = [{"type":"SOLID","visible":true,"opacity":1,"blendMode":"NORMAL","color":{"r":0.21156379580497742,"g":0.8083333373069763,"b":0.10777777433395386}}]
+  complete.backgrounds = [{"type":"SOLID","visible":true,"opacity":1,"blendMode":"NORMAL","color":{"r":1,"g":1,"b":1}}]
   complete.layoutMode = "HORIZONTAL"
   complete.counterAxisSizingMode = "AUTO"
   complete.description = ""
@@ -282,7 +281,7 @@ let createCover = (projectName, teamName, color, textColor) => {
   var completeText = figma.createText()
   completeText.resize(109.0000000000, 19.0000000000)
   completeText.name = "In Progress"
-  completeText.fills = [{"type":"SOLID","visible":true,"opacity":1,"blendMode":"NORMAL","color":{"r":1,"g":1,"b":1}}]
+  completeText.fills = [{"type":"SOLID","visible":true,"opacity":1,"blendMode":"NORMAL","color":{"r":0,"g":0,"b":0}}]
   completeText.relativeTransform = [[1,0,24],[0,1,16]]
   completeText.x = 24
   completeText.y = 16
@@ -319,7 +318,7 @@ let createCover = (projectName, teamName, color, textColor) => {
   readyForEng.paddingRight = 24
   readyForEng.paddingTop = 16
   readyForEng.paddingBottom = 16
-  readyForEng.backgrounds = [{"type":"SOLID","visible":true,"opacity":1,"blendMode":"NORMAL","color":{"r":0,"g":0,"b":0}}]
+  readyForEng.backgrounds = [{"type":"SOLID","visible":true,"opacity":1,"blendMode":"NORMAL","color":{"r":1,"g":1,"b":1}}]
   readyForEng.layoutMode = "HORIZONTAL"
   readyForEng.counterAxisSizingMode = "AUTO"
   readyForEng.description = ""
@@ -329,7 +328,7 @@ let createCover = (projectName, teamName, color, textColor) => {
   var readyForEngText = figma.createText()
   readyForEngText.resize(146.0000000000, 19.0000000000)
   readyForEngText.name = "In Progress"
-  readyForEngText.fills = [{"type":"SOLID","visible":true,"opacity":1,"blendMode":"NORMAL","color":{"r":1,"g":1,"b":1}}]
+  readyForEngText.fills = [{"type":"SOLID","visible":true,"opacity":1,"blendMode":"NORMAL","color":{"r":0,"g":0,"b":0}}]
   readyForEngText.relativeTransform = [[1,0,24],[0,1,16]]
   readyForEngText.x = 24
   readyForEngText.y = 16
@@ -364,7 +363,7 @@ let createCover = (projectName, teamName, color, textColor) => {
   paused.paddingRight = 24
   paused.paddingTop = 16
   paused.paddingBottom = 16
-  paused.backgrounds = [{"type":"SOLID","visible":true,"opacity":1,"blendMode":"NORMAL","color":{"r":0.28333336114883423,"g":0.6475410461425781,"b":1}}]
+  paused.backgrounds = [{"type":"SOLID","visible":true,"opacity":1,"blendMode":"NORMAL","color":{"r":1,"g":1,"b":1}}]
   paused.layoutMode = "HORIZONTAL"
   paused.counterAxisSizingMode = "AUTO"
   paused.description = ""
@@ -374,7 +373,7 @@ let createCover = (projectName, teamName, color, textColor) => {
   var pausedText = figma.createText()
   pausedText.resize(85.0000000000, 19.0000000000)
   pausedText.name = "In Progress"
-  pausedText.fills = [{"type":"SOLID","visible":true,"opacity":1,"blendMode":"NORMAL","color":{"r":1,"g":1,"b":1}}]
+  pausedText.fills = [{"type":"SOLID","visible":true,"opacity":1,"blendMode":"NORMAL","color":{"r":0,"g":0,"b":0}}]
   pausedText.relativeTransform = [[1,0,24],[0,1,16]]
   pausedText.x = 24
   pausedText.y = 16
@@ -409,7 +408,7 @@ let createCover = (projectName, teamName, color, textColor) => {
   inReview.paddingRight = 24
   inReview.paddingTop = 16
   inReview.paddingBottom = 16
-  inReview.backgrounds = [{"type":"SOLID","visible":true,"opacity":1,"blendMode":"NORMAL","color":{"r":0.686274528503418,"g":0.32156863808631897,"b":0.8705882430076599}}]
+  inReview.backgrounds = [{"type":"SOLID","visible":true,"opacity":1,"blendMode":"NORMAL","color":{"r":1,"g":1,"b":1}}]
   inReview.layoutMode = "HORIZONTAL"
   inReview.counterAxisSizingMode = "AUTO"
   inReview.description = ""
@@ -419,7 +418,7 @@ let createCover = (projectName, teamName, color, textColor) => {
   var inReviewText = figma.createText()
   inReviewText.resize(104.0000000000, 19.0000000000)
   inReviewText.name = "In Progress"
-  inReviewText.fills = [{"type":"SOLID","visible":true,"opacity":1,"blendMode":"NORMAL","color":{"r":1,"g":1,"b":1}}]
+  inReviewText.fills = [{"type":"SOLID","visible":true,"opacity":1,"blendMode":"NORMAL","color":{"r":0,"g":0,"b":0}}]
   inReviewText.relativeTransform = [[1,0,24],[0,1,16]]
   inReviewText.x = 24
   inReviewText.y = 16
