@@ -1,6 +1,124 @@
+//set up NEW FILE
+if (figma.command === "setUpNewFile") {
+  figma.showUI(__html__);
+  figma.ui.resize(440, 900);  
+}
 
-figma.showUI(__html__);
-figma.ui.resize(440, 900);
+//set file status to COMPLETE
+if (figma.command === "setFileStatusToComplete") {
+  //set page to first page that IF first page is named correctly
+  const firstPage = figma.root.children[0]
+  // figma.currentPage = firstPage
+
+  //look for status node in current page
+  const component = firstPage.findAllWithCriteria({
+    types: ['INSTANCE']
+  })
+  //loop through all component intstances on page and check their parent
+  for (let i = 0; i < component.length; i++) {
+    console.log(component[i].mainComponent.parent.name)
+    if (component[i].mainComponent.parent.name === "FILE-STATUS") {
+      component[i].setProperties({"STATUS": "COMPLETE"})
+      figma.notify("Set file status to ✅ COMPLETE")
+    }
+    else {
+      figma.notify("⚠️ Unable to update status. Try running SET UP NEW FILE", {error: true})
+    }
+  }
+  figma.closePlugin()
+} 
+
+//set file status to IN PROGRESS
+if (figma.command === "setFileStatusToInProgress") {
+  //set page to first page that IF first page is named correctly
+  const firstPage = figma.root.children[0]
+  // figma.currentPage = firstPage
+
+  //look for status node in current page
+  const component = firstPage.findAllWithCriteria({
+    types: ['INSTANCE']
+  })
+  //loop through all component intstances on page and check their parent
+  for (let i = 0; i < component.length; i++) {
+    console.log(component[i].mainComponent.parent.name)
+    if (component[i].mainComponent.parent.name === "FILE-STATUS") {
+      component[i].setProperties({"STATUS": "IN PROGRESS"})
+      figma.notify("Set file status to ✍️ IN PROGRESS")
+    }
+    else {
+      figma.notify("⚠️ Unable to update status. Try running SET UP NEW FILE", {error: true})
+    }
+  }
+  figma.closePlugin()
+} 
+
+//set file status to READY FOR ENG
+if (figma.command === "setFileStatusToReadyForEng") {
+  //set page to first page that IF first page is named correctly
+  const firstPage = figma.root.children[0]
+  // figma.currentPage = firstPage
+
+  //look for status node in current page
+  const component = firstPage.findAllWithCriteria({
+    types: ['INSTANCE']
+  })
+  //loop through all component intstances on page and check their parent
+  for (let i = 0; i < component.length; i++) {
+    console.log(component[i].mainComponent.parent.name)
+    if (component[i].mainComponent.parent.name === "FILE-STATUS") {
+      component[i].setProperties({"STATUS": "READY FOR ENG"})
+      figma.notify("Set file status to 🛠 READY FOR ENG")
+    }
+    else {
+      figma.notify("⚠️ Unable to update status. Try running SET UP NEW FILE", {error: true})
+    }
+  }
+  figma.closePlugin()
+} 
+
+//set file status to IN REVIEW
+if (figma.command === "setFileStatusToInReview") {
+  const firstPage = figma.root.children[0]
+  //look for status node in current page
+  const component = firstPage.findAllWithCriteria({
+    types: ['INSTANCE']
+  })
+  //loop through all component intstances on page and check their parent
+  for (let i = 0; i < component.length; i++) {
+    console.log(component[i].mainComponent.parent.name)
+    if (component[i].mainComponent.parent.name === "FILE-STATUS") {
+      component[i].setProperties({"STATUS": "IN REVIEW"})
+      figma.notify("Set file status to 👀 IN REVIEW")
+    }
+    else {
+      figma.notify("⚠️ Unable to update status. Try running SET UP NEW FILE", {error: true})
+    }
+  }
+  figma.closePlugin()
+}
+
+//set file status to PAUSED
+if (figma.command === "setFileStatusToPaused") {
+  const firstPage = figma.root.children[0]
+  //look for status node in current page
+  const component = firstPage.findAllWithCriteria({
+    types: ['INSTANCE']
+  })
+  //loop through all component intstances on page and check their parent
+  for (let i = 0; i < component.length; i++) {
+    console.log(component[i].mainComponent.parent.name)
+    if (component[i].mainComponent.parent.name === "FILE-STATUS") {
+      component[i].setProperties({"STATUS": "PAUSED"})
+      figma.notify("Set file status to ⏸  PAUSED")
+    }
+    else {
+      figma.notify("⚠️ Unable to update status. Try running SET UP NEW FILE", {error: true})
+    }
+  }
+  figma.closePlugin()
+}
+
+
 
 //load roboto
 async function loadRoboto() {
@@ -1043,6 +1161,7 @@ var createLocalComponents = () => {
 figma.ui.onmessage = (event) => {
   if (event.type === "createProject") {
     loadRoboto().then(() => {
+      
       createCover(event.projectName, event.teamName, event.color);
       createReadme(event.projectName, event.projectDescription, event.productPOC, event.designPOC, event.engPOC, event.slackChannel);
       //create certain pages
@@ -1077,7 +1196,7 @@ figma.ui.onmessage = (event) => {
         console.log("create local components page")
         createLocalComponents();
       }
-
+      figma.notify("Success! Now get to work")
       figma.closePlugin();
     })
   }

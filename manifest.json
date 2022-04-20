@@ -4,5 +4,18 @@
   "api": "1.0.0",
   "main": "code.js",
   "ui": "ui.html",
-  "editorType": ["figma"]
+  "editorType": ["figma"],
+  "menu": [
+    {"name": "Set Up New File", "command": "setUpNewFile"},
+    {"separator": true},
+    {"name": "Set File Status",
+      "menu": [
+        {"name": "✍️ In Progress", "command": "setFileStatusToInProgress"},
+        {"name": "✅ Complete", "command": "setFileStatusToComplete"},
+        {"name": "🛠  Ready for eng", "command": "setFileStatusToReadyForEng"},
+        {"name": "⏸  Paused", "command": "setFileStatusToPaused"},
+        {"name": "👀  In Review", "command": "setFileStatusToInReview"}
+      ]
+     }
+  ]
 }
