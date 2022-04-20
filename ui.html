@@ -8,37 +8,37 @@
   <div id="colors">
     <form id="colorPicker" onchange="changeBGColor()">
       <label class="container">
-        <input type="radio" name="color" value="#49CE7F" checked="checked">
+        <input type="radio" name="color" value="#71CA86" checked="checked">
         <span class="radioButton" id="green"></span>
       </label>
 
       <label class="container">
-        <input type="radio" id="blue" name="color" value="#0C6FF9">
+        <input type="radio" id="blue" name="color" value="#82AEFF">
         <span class="radioButton" id="blue"></span>
       </label>
 
       <label class="container">
-        <input type="radio"  name="color" value="#FF7E1D">
+        <input type="radio"  name="color" value="#EF843B">
         <span class="radioButton" id="orange"></span>
       </label>
 
       <label class="container">
-        <input type="radio"  name="color" value="#FEACD5">
+        <input type="radio"  name="color" value="#F2B0D3">
         <span class="radioButton" id="pink"></span>
       </label>
 
       <label class="container">
-        <input type="radio"  name="color" value="#A273C6">
+        <input type="radio"  name="color" value="#9B77C1">
         <span class="radioButton" id="purple"></span>
       </label>
 
       <label class="container">
-        <input type="radio"  name="color" value="#EF3C3C">
+        <input type="radio"  name="color" value="#FF5A5A">
         <span class="radioButton" id="red"></span>
       </label>
 
       <label class="container">
-        <input type="radio"  name="color" value="#FFCE00">
+        <input type="radio"  name="color" value="#FFEF5E">
         <span class="radioButton" id="yellow"></span>
       </label>
     
@@ -102,37 +102,45 @@
 
 <style>
 
+  #mockTitle {
+    color: #002F0B
+  }
+
+  #mockTeamName {
+    color: #002F0B
+  }
+
   #colors {
     margin-left: 50px;
     margin-top: -14px;
   }
 
   #green {
-    background-color: #49CE7F;
+    background-color: #71CA86;
   }
 
   #blue {
-    background-color: #0C6FF9;
+    background-color: #82AEFF;
   }
 
   #orange {
-    background-color: #FF7E1D;
+    background-color: #EF843B;
   }
 
   #pink {
-    background-color: #FEACD5;
+    background-color: #F2B0D3;
   }
 
   #purple {
-    background-color: #A273C6;
+    background-color: #9B77C1;
   }
 
   #red {
-    background-color: #EF3C3C;
+    background-color: #FF5A5A;
   }
 
   #yellow {
-    background-color: #FFCE00;
+    background-color: #FFEF5E;
   }
 
   
@@ -190,7 +198,7 @@
   #previewBox {
     width: 316px;
     height: 177px;
-    background-color:#49CE7F;
+    background-color:#71CA86;
     padding: 30px;
     margin: 0 auto;
   }
@@ -286,7 +294,9 @@
   }
 
   //set default
-  let currentColor = "#01A652"
+  let currentColor = "#71CA86"
+  //set default text color
+  let currentColorText = "#002F0B"
 
   var changeBGColor = () => {
     var colorForm = document.getElementById("colorPicker")
@@ -295,7 +305,34 @@
       if (colorForm[i].checked) {
         // do whatever you want with the checked radio
         currentColor = colorForm[i].value;
+        //change project title and team name text color
+        if (currentColor === "#71CA86") {
+          currentColorText = "#002F0B"
+          console.log("change project title color to Dark Green")
+        } else if (currentColor === "#82AEFF") {
+          currentColorText = "#0A2B66"
+          console.log("change project title color to Dark Blue")
+        } else if (currentColor === "#EF843B") {
+          currentColorText = "#4E1F00"
+          console.log("change project title color to Dark Orange")
+        } else if (currentColor === "#F2B0D3") {
+          currentColorText = "#4B0028"
+          console.log("change project title color to Dark Pink")
+        } else if (currentColor === "#9B77C1") {
+          currentColorText = "#190033"
+          console.log("change project title color to Dark Purple")
+        } else if (currentColor === "#FF5A5A") {
+          currentColorText = "#410000"
+          console.log("change project title color to Dark Red")
+        } else if (currentColor === "#FFEF5E") {
+          currentColorText = "#420400"
+          console.log("change project title color to Dark Yellow")
+        }
+        //set bg color of preview box
         document.getElementById("previewBox").style.backgroundColor = currentColor;
+        //set text of preview box to dark color
+        document.getElementById("mockTitle").style.color = currentColorText;
+        document.getElementById("mockTeamName").style.color = currentColorText;
         // only one radio can be logically checked, don't check the rest
         break;
       }
