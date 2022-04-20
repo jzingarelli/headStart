@@ -130,7 +130,7 @@ async function loadRoboto() {
 	])
 }
 
-let createCover = (projectName, teamName, color) => {
+let createCover = (projectName, teamName, color, textColor) => {
   //create cover page
   var coverPage = figma.createPage()
   coverPage.name = "📗 COVER"
@@ -171,7 +171,7 @@ let createCover = (projectName, teamName, color) => {
   var projectNameText = figma.createText()
   projectNameText.resize(540.0000000000, 65.0000000000)
   projectNameText.name = "Project name"
-  projectNameText.fills = [{"type":"SOLID","visible":true,"opacity":1,"blendMode":"NORMAL","color":{"r":1,"g":1,"b":1}}]
+  projectNameText.fills = [{"type":"SOLID","visible":true,"opacity":1,"blendMode":"NORMAL","color":{"r":textColor[0],"g":textColor[1],"b":textColor[2]}}]
   projectNameText.strokeWeight = 0
   projectNameText.strokeAlign = "INSIDE"
   projectNameText.relativeTransform = [[1,0,40],[0,1,40]]
@@ -194,7 +194,7 @@ let createCover = (projectName, teamName, color) => {
   var teamNameText = figma.createText()
   teamNameText.resize(540.0000000000, 32.0000000000)
   teamNameText.name = "Team Name"
-  teamNameText.fills = [{"type":"SOLID","visible":true,"opacity":1,"blendMode":"NORMAL","color":{"r":1,"g":1,"b":1}}]
+  teamNameText.fills = [{"type":"SOLID","visible":true,"opacity":1,"blendMode":"NORMAL","color":{"r":textColor[0],"g":textColor[1],"b":textColor[2]}}]
   teamNameText.strokeWeight = 0
   teamNameText.strokeAlign = "CENTER"
   teamNameText.relativeTransform = [[1,0,40],[0,1,109]]
@@ -1197,7 +1197,7 @@ figma.ui.onmessage = (event) => {
   if (event.type === "createProject") {
     loadRoboto().then(() => {
       
-      createCover(event.projectName, event.teamName, event.color);
+      createCover(event.projectName, event.teamName, event.color, event.textColor);
       createReadme(event.projectName, event.projectDescription, event.productPOC, event.designPOC, event.engPOC, event.slackChannel);
       //create certain pages
       let pagesToCreate = event.pagesToCreate

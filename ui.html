@@ -404,7 +404,11 @@
       return rgbArray
     }
 
-    rgbColorValues = hexToRGB(hexColor)
+    //set background color value in RGB
+    coverBackgroundColorRGB = hexToRGB(currentColor)
+
+    //set title and team name text color in RGB
+    titleTeamNameColorRGB = hexToRGB(currentColorText)
 
      //Create an Array.
     var selectedPages = []
@@ -442,7 +446,8 @@
       engPOC: engPOC,
       teamName: teamName, 
       slackChannel: slackChannel, 
-      color: rgbColorValues,
+      color: coverBackgroundColorRGB,
+      textColor: titleTeamNameColorRGB,
       pagesToCreate: selectedPages
     }}, '*')
 
