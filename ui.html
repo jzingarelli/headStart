@@ -45,6 +45,7 @@
     </form>
   </div>
   <div id="inputBox">
+    <p id="pagestToCreateTitle">Project Info</p>
     <div>
       <input type="text" id="projectName" placeholder="Project Title" oninput="onTitleChange()">
     </div>
@@ -70,37 +71,100 @@
     <div>
       <textarea rows="5" id="projectDescription" placeholder="Short Project Description"></textarea>
     </div>
-
+  </div>
+  <div id="inputBox">
     <!-- create form to hold checkboxes for specific pages -->
   <form id="pagesToCreate">
-    <p id="pagestToCreateTitle">What pages do you want to include?</p>
+    <p id="pagestToCreateTitle">Pages</p>
     <!-- create INDIVIDUAL checkboxes -->
-    <input type="checkbox" id="engHandoff" name="engHandoff" value="engHandoff">
-    <label for="engHandoff"> ⚒️ Eng Handoff</label>
-
-    <input type="checkbox" id="userTesting" name="userTesting" value="userTesting">
-    <label for="userTesting"> 🔬 User Testing</label>
+    <div class="checkBoxAndLabel">
+      <label for="engHandoff" class="flexGrowLabel"> ⚒️ Eng Handoff</label>
+      <input type="checkbox" id="engHandoff" name="engHandoff" value="engHandoff" class="checkboxFloatRight">
+      
+    </div>
+    <div class="checkBoxAndLabel">
+      <label for="userTesting" class="flexGrowLabel"> 🔬 User Testing</label>
+      <input type="checkbox" id="userTesting" name="userTesting" value="userTesting">
+      
+    </div>
+    <div class="checkBoxAndLabel">
+      <label for="explore" class="flexGrowLabel"> 🔮 Explore </label>
+      <input type="checkbox" id="explore" name="explore" value="explore">
+      
+    </div>
+    <div class="checkBoxAndLabel">
+      <label for="think" class="flexGrowLabel"> 🤔 Think </label>
+      <input type="checkbox" id="think" name="think" value="think">
+      
+    </div>
     
-    <input type="checkbox" id="explore" name="explore" value="explore">
-    <label for="explore"> 🔮 Explore </label>
-
-    <input type="checkbox" id="think" name="think" value="think">
-    <label for="think"> 🤔 Think </label>
-
-    <input type="checkbox" id="archive" name="archive" value="archive">
-    <label for="archive"> 📦 Archive </label>
-
-    <input type="checkbox" id="localComponents" name="localComponents" value="localComponents">
-    <label for="localComponents"> Local Components </label>
+    <div class="checkBoxAndLabel">
+      <label for="archive" class="flexGrowLabel"> 📦 Archive </label>
+      <input type="checkbox" id="archive" name="archive" value="archive">
+      
+    </div>
+    
+    <di class="checkBoxAndLabel">
+      <label for="localComponents" class="flexGrowLabel"> Local Components </label>
+      <input type="checkbox" id="localComponents" name="localComponents" value="localComponents">
+      
+    </div>
   
-  </form>
+  </form class="createButtonForm">
 
-    <button id="createProject">Create Project</button>
+    <button id="createProject">CREATE PROJECT</button>
+    <div class="bottomSpacer""></div>
   </div>
   
 </div>
 
 <style>
+
+  #pagesToCreate {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  #pagestToCreateTitle {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-weight: 600;
+    font-size: 20px;
+    padding-left: 8px;
+    margin-top: 0px;
+  }
+
+  label {
+    font-size: 16px;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  }
+
+  input[type=checkbox] {
+    width: 16px;
+    height: 16px;
+    border: 2px solid #767676;
+    border-radius: 8px;
+  }
+
+  .checkBoxAndLabel {
+    padding-bottom: 12px;
+    padding-top: 12px;
+    display: flex;
+    align-self: stretch;
+    flex-grow: 0;
+    border-bottom: 1px solid #F0F0F0;
+  }
+
+  .flexGrowLabel {
+    flex: none;
+    order: 0;
+    flex-grow: 1;
+    margin: 0px 8px;
+  }
+
+  hr {
+    border-top: 3px solid #bbb;
+  } 
 
   #mockTitle {
     color: #002F0B
@@ -164,7 +228,7 @@
     height: 32px;
     width: 32px;
     border-radius: 8px;
-    border: 4px solid white;
+    border: 4px solid #F7F7F7;
     box-sizing: border-box;
     
   }
@@ -187,12 +251,11 @@
   #uiBackground {
     position: relative;
     width: 100%;
-    height: 100%;
+    background-color: #F7F7F7;
   }
   .previewBackground {
-    background-color: #FBFBFB;
-    padding-top: 30px;
-    padding-bottom: 30px;
+    padding-top: 32px;
+    padding-bottom: 32px;
   }
 
   #previewBox {
@@ -201,6 +264,8 @@
     background-color:#71CA86;
     padding: 30px;
     margin: 0 auto;
+    border-radius: 12px;
+    box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.1);
   }
 
   .projectTitle {
@@ -235,7 +300,6 @@
     box-sizing: border-box;
     border-radius: 8px;
     padding: 8px;
-    margin-bottom: 48px;
     width: 100%;
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     resize: none;
@@ -247,8 +311,10 @@
   }
 
   #inputBox {
-    padding: 40px;
-    
+    margin: 32px;
+    padding: 20px;
+    background-color: white;
+    border-radius: 12px;
   }
 
   button {
@@ -256,7 +322,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: 12px 32px;
+    padding: 16px 40px;
     margin: 0 auto;
     border: none;
 
@@ -269,12 +335,16 @@
     border-radius: 72px;
     color: white;
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    font-weight: 700;
+    font-weight: 500;
+    font-size: 16px;
   }
 
-  #pagesToCreate {
-    display: block
+  .bottomSpacer {
+    height: 40px;
+    background-color: transparent;
   }
+
+  
 
 </style>
 
