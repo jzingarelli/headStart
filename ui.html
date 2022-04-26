@@ -402,7 +402,6 @@
     var currentTitleText = document.getElementById("projectName").value;
     var mockTitleText = document.getElementById("mockTitle");
     mockTitleText.innerHTML = `${currentTitleText}`;
-    console.log(currentTitleText)
   }
 
   var onTeamNameChange = () => {
@@ -426,25 +425,18 @@
         //change project title and team name text color
         if (currentColor === "#71CA86") {
           currentColorText = "#002F0B"
-          console.log("change project title color to Dark Green")
         } else if (currentColor === "#82AEFF") {
           currentColorText = "#0A2B66"
-          console.log("change project title color to Dark Blue")
         } else if (currentColor === "#EF843B") {
           currentColorText = "#4E1F00"
-          console.log("change project title color to Dark Orange")
         } else if (currentColor === "#F2B0D3") {
           currentColorText = "#4B0028"
-          console.log("change project title color to Dark Pink")
         } else if (currentColor === "#9B77C1") {
           currentColorText = "#190033"
-          console.log("change project title color to Dark Purple")
         } else if (currentColor === "#FF5A5A") {
           currentColorText = "#410000"
-          console.log("change project title color to Dark Red")
         } else if (currentColor === "#FFEF5E") {
           currentColorText = "#420400"
-          console.log("change project title color to Dark Yellow")
         }
         //set bg color of preview box
         document.getElementById("previewBox").style.backgroundColor = currentColor;
@@ -555,7 +547,6 @@
 
     GetSelected();
     
-    console.log(selectedPages)
     
     
 

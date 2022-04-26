@@ -23,7 +23,6 @@ if (figma.command === "setFileStatusToComplete") {
     });
     //loop through all component intstances on page and check their parent
     for (let i = 0; i < component.length; i++) {
-        console.log(component[i].mainComponent.parent.name);
         if (component[i].mainComponent.parent.name === "FILE-STATUS") {
             component[i].setProperties({ "STATUS": "COMPLETE" });
             figma.notify("Set file status to ✅ COMPLETE");
@@ -45,7 +44,6 @@ if (figma.command === "setFileStatusToInProgress") {
     });
     //loop through all component intstances on page and check their parent
     for (let i = 0; i < component.length; i++) {
-        console.log(component[i].mainComponent.parent.name);
         if (component[i].mainComponent.parent.name === "FILE-STATUS") {
             component[i].setProperties({ "STATUS": "IN PROGRESS" });
             figma.notify("Set file status to ✍️ IN PROGRESS");
@@ -67,7 +65,6 @@ if (figma.command === "setFileStatusToReadyForEng") {
     });
     //loop through all component intstances on page and check their parent
     for (let i = 0; i < component.length; i++) {
-        console.log(component[i].mainComponent.parent.name);
         if (component[i].mainComponent.parent.name === "FILE-STATUS") {
             component[i].setProperties({ "STATUS": "READY FOR ENG" });
             figma.notify("Set file status to 🛠 READY FOR ENG");
@@ -87,7 +84,6 @@ if (figma.command === "setFileStatusToInReview") {
     });
     //loop through all component intstances on page and check their parent
     for (let i = 0; i < component.length; i++) {
-        console.log(component[i].mainComponent.parent.name);
         if (component[i].mainComponent.parent.name === "FILE-STATUS") {
             component[i].setProperties({ "STATUS": "IN REVIEW" });
             figma.notify("Set file status to 👀 IN REVIEW");
@@ -107,7 +103,6 @@ if (figma.command === "setFileStatusToPaused") {
     });
     //loop through all component intstances on page and check their parent
     for (let i = 0; i < component.length; i++) {
-        console.log(component[i].mainComponent.parent.name);
         if (component[i].mainComponent.parent.name === "FILE-STATUS") {
             component[i].setProperties({ "STATUS": "PAUSED" });
             figma.notify("Set file status to ⏸  PAUSED");
@@ -471,6 +466,8 @@ let createCover = (projectName, teamName, color, textColor) => {
     coverPageFrame.appendChild(coverFileStatusInstance);
     coverPageFrame.appendChild(projectNameText);
     coverPageFrame.appendChild(teamNameText);
+    //set coverPageFrame as thumbnail
+    figma.setFileThumbnailNodeAsync(coverFrame);
 };
 let createReadme = (projectName, projectDescription, productPOC, designPOC, engPOC, slackChannel) => {
     //create ReadMe page
@@ -1117,32 +1114,26 @@ figma.ui.onmessage = (event) => {
             let pagesToCreate = event.pagesToCreate;
             //create eng handoff
             if (pagesToCreate.includes("engHandoff")) {
-                console.log("create eng hand off page");
                 createEngHandoff();
             }
             //create user testing
             if (pagesToCreate.includes("userTesting")) {
-                console.log("create user testing page");
                 createUserTesting();
             }
             //create explore
             if (pagesToCreate.includes("explore")) {
-                console.log("create explore page");
                 createExplore();
             }
             //create think
             if (pagesToCreate.includes("think")) {
-                console.log("create thinkn page");
                 createThink();
             }
             //create archive
             if (pagesToCreate.includes("archive")) {
-                console.log("create archive page");
                 createArchive();
             }
             //create local components
             if (pagesToCreate.includes("localComponents")) {
-                console.log("create local components page");
                 createLocalComponents();
             }
             figma.notify("Success! Now get to work");
